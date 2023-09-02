@@ -7,3 +7,4 @@ My dotfiles for:
 - Neofetch
 - Qutebrowser
 - Neovim
+- Thefuck
