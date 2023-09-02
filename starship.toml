@@ -1,0 +1,78 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Use custom format
+format = '''
+[╔═══════════════════](green) $sudo$username $os  $time
+[╠═](green) $directory $git_branch $git_commit $git_metrics
+[╚════](green) '''
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+palette = 'dracula'
+
+[palettes.dracula]
+white = "#f8f8f2"
+black = "#1e1f28"
+gray = "#545454"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f0fa8b"
+purple = "#bd92f8"
+pink = "#ff78c5"
+cyan = "#8ae9fc"
+light_gray = "#bbbbbb"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[sudo]
+format = "[$symbol]($style)"
+symbol ="󱑷 "
+style ="bold yellow"
+
+[username]
+format = "[$user]($style)"
+show_always = true
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bold yellow"
+
+[os.symbols]
+Fedora = ""
+Arch = "󰣇"
+Manjaro = "󱘊 "
+Pop = ""
+Debian = "󰣚"
+
+[time]
+disabled = false
+format = "[ |$time|]($style) "
+time_format = "%k:%M"
+style = "bold cyan"
+
+[directory]
+style = 'purple'
+truncation_symbol = '.../'
+
+[git_branch]
+format = "[󰊢 $symbol$branch(:$remote_branch)]($style)"
+style = "red"
+symbol = ""
+
+[git_commit]
+format = "[ $hash](style) "
+style = "red"
+
+[git_metrics]
+format = "([ $added]($added_style) )([ $deleted]($deleted_style))"
+added_style = "green"
+deleted_style = "red"
+
