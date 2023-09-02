@@ -32,6 +32,7 @@ light_gray = "#bbbbbb"
 disabled = true
 
 [sudo]
+disabled = false
 format = "[$symbol]($style)"
 symbol ="󱑷 "
 style ="bold yellow"
@@ -72,6 +73,7 @@ format = "[ $hash](style) "
 style = "red"
 
 [git_metrics]
+disabled = false
 format = "([ $added]($added_style) )([ $deleted]($deleted_style))"
 added_style = "green"
 deleted_style = "red"
