@@ -31,6 +31,9 @@ light_gray = "#bbbbbb"
 [package]
 disabled = true
 
+[conda]
+disabled = true
+
 [sudo]
 disabled = false
 format = "[$symbol]($style)"
