@@ -69,8 +69,9 @@ style = "red"
 symbol = ""
 
 [git_commit]
-disabled = false
-format = "[ $hash]($style) "
+format = "[ $hash$tag]($style)"
+tag_disabled = false
+tag_symbol = " 󰓹 "
 style = "red"
 
 [git_metrics]
