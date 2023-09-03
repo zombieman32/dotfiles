@@ -8,7 +8,7 @@ end
 set fish_greeting
 
 if type -q exa
-  alias ll "exa -l -g --icons"
+  alias ll "exa -l -h -g --git --icons"
   alias lla "ll -a"
 end
 
@@ -20,3 +20,5 @@ if test -f /home/zombie/miniconda3/bin/conda
     eval /home/zombie/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
+
+thefuck --alias | source
