@@ -2,7 +2,7 @@
 ---
 My dotfiles for:
 - Fish
--- Omf
+  - Omf
 - Kitty
 - Starship
 - Neofetch
