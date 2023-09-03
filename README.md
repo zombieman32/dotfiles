@@ -3,6 +3,7 @@
 My dotfiles for:
 - Fish
   - Omf
+  - Exa
 - Kitty
 - Starship
 - Neofetch
