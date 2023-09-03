@@ -4,7 +4,6 @@ end
 
 set fish_greeting
 starship init fish | source
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/zombie/miniconda3/bin/conda

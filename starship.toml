@@ -72,6 +72,7 @@ style = "red"
 symbol = ""
 
 [git_commit]
+disabled = false
 format = "[ $hash$tag]($style)"
 tag_disabled = false
 tag_symbol = " 󰓹 "

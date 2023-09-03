@@ -23,6 +23,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<leader-h>", "<cmd> TmuxNavigateLeft<CR>", opts)
+keymap("n", "<leader-j>", "<cmd> TmuxNavigateDown<CR>", opts)
+keymap("n", "<leader-k>", "<cmd> TmuxNavigateUp<CR>", opts)
+keymap("n", "<leader-l>", "<cmd> TmuxNavigateRight<CR>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
