@@ -11,3 +11,4 @@ My dotfiles for:
 - Neovim
 - Thefuck
 - Tmux
+- Spotify-tui
