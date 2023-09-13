@@ -55,6 +55,13 @@ return packer.startup(function(use)
   } -- Start screen
   use "lewis6991/gitsigns.nvim" -- Git symbols
   use({
+    'willothy/nvim-cokeline',
+    requires = {
+      "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+      "kyazdani42/nvim-web-devicons", -- If you want devicons
+    }
+  })
+  use({
   "folke/persistence.nvim",
   event = "BufReadPre", -- this will only start session saving when an actual file was opened
   module = "persistence",
@@ -63,7 +70,6 @@ return packer.startup(function(use)
   end,}) -- Session manager
   use 'echasnovski/mini.animate' -- Animations
   use 'kyazdani42/nvim-web-devicons' -- Icons
-  use "akinsho/bufferline.nvim" -- Tabs
   use "moll/vim-bbye"
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   use 'junegunn/rainbow_parentheses.vim' -- Color pairs of brackets
@@ -104,9 +110,17 @@ return packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
   -- Misc
-  use "mg979/vim-visual-multi" -- Multiple cursors
-  use 'echasnovski/mini.cursorword'
+  use 'andweeb/presence.nvim' -- Discord integration
   use "stevearc/dressing.nvim"
+  use 'smoka7/multicursors.nvim'
+  use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
+  use {
+    'samodostal/image.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
+  use 'niuiic/core.nvim'
 
   use{
     "ziontee113/icon-picker.nvim",

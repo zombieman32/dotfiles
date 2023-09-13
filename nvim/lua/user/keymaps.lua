@@ -30,24 +30,31 @@ keymap("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
 keymap("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<S-k>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-j>", ":BufferLineMovePrev<CR>", opts)
-keymap("n", "<S-c>", ":bdelete<CR>", opts)
-keymap("n", "<S-p>", ":BufferLinePick<CR>", opts)
+keymap('n', '<S-l>',   '<Plug>(cokeline-focus-next)', opts)
+keymap('n', '<S-h>',   '<Plug>(cokeline-focus-prev)', opts)
+keymap('n', '<S-j>',   '<Plug>(cokeline-switch-next)', opts)
+keymap('n', '<S-k>',   '<Plug>(cokeline-switch-prev)', opts)
+keymap('n', '<S-c>',   ':bdelete<CR>', opts)
+-- keymap("n", "<S-k>", ":BufferLineMoveNext<CR>", opts)
+-- keymap("n", "<S-j>", ":BufferLineMovePrev<CR>", opts)
+-- keymap("n", "<S-p>", ":BufferLinePick<CR>", opts)
 
 -- Nvimtree
 keymap('n', '<A-t>', '<Cmd>NvimTreeToggle<CR>', opts)
 
+-- Take photo of code
 keymap("n", "ff", "$", opts)
 
+keymap("n", "ff", "$", opts)
+
+-- Move lines up or down
 keymap("n", "<A-k>", ":move -2<cr>", opts)
 keymap("n", "<A-j>", ":move +1<cr>", opts)
 
+-- Focus pwd to current file
 keymap("n", "<A-p>", ":cd %:p:h<CR>", opts)
 
---Split
+--Splits
 keymap("n", "<A-v>", ":vsplit<cr>", opts)
 keymap("n", "<A-h>", ":split<cr>", opts)
 
@@ -57,7 +64,7 @@ keymap("n", "<A-Down>", ":resize -2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
--- Insert --
+    -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
@@ -67,7 +74,7 @@ keymap("v", "(", "di()<esc>hp", opts) -- Surround selected text in parentheses
 keymap("v", "{", "di{}<esc>hp", opts) -- Surround selected text in brackets
 keymap("v", "[", "di[]<esc>hp", opts) -- Surround selected text in square brackets
 keymap("v", "\"", "di\"\"<esc>hp", opts) -- Surround selected text in quotes
-keymap("v", "\'", "di\'\'<esc>hp", opts) -- Surround selected text in single quotes
+keymap("v", "'", "di''<esc>hp", opts) -- Surround selected text in single quotes
 
 
 -- Telescope --
