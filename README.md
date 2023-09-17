@@ -14,9 +14,9 @@ My dotfiles for:
 - Tmux
 - Spotify-tui
 
-<details>
+- <details>
 <summary>
-- Neovim
+Neovim
 </summary>
   <br>
 
