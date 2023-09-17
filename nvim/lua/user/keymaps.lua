@@ -55,8 +55,8 @@ keymap("n", "<A-j>", ":move +1<cr>", opts)
 keymap("n", "<A-p>", ":cd %:p:h<CR>", opts)
 
 --Splits
-keymap("n", "<A-v>", ":vsplit<cr>", opts)
-keymap("n", "<A-h>", ":split<cr>", opts)
+keymap("n", "<A-h>", ":vsplit<cr>", opts)
+keymap("n", "<A-v>", ":split<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<A-Up>", ":resize +2<CR>", opts)

@@ -77,7 +77,7 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guides
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" }) -- File Tree
-	use("iamcco/markdown-preview.nvim")
+	use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }) -- Markdown preview
 
 	-- Color themes
 	use("rebelot/kanagawa.nvim")
@@ -112,7 +112,7 @@ return packer.startup(function(use)
 
 	-- Misc
 	use("andweeb/presence.nvim") -- Discord integration
-	use("stevearc/dressing.nvim")
+	use("stevearc/dressing.nvim") -- Better UI
 	use("smoka7/multicursors.nvim")
 	use({ "m00qek/baleia.nvim", tag = "v1.3.0" })
 	use({
@@ -160,7 +160,13 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-
+	use({
+		"code-biscuits/nvim-biscuits",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+		},
+	})
 	--Clojure
 	use("clojure-vim/acid.nvim")
 	use("Vigemus/impromptu.nvim")
