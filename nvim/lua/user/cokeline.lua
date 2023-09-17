@@ -12,18 +12,18 @@ cokeline.setup({
 	},
 	default_hl = {
 		fg = function(buffer)
-			return buffer.is_focused and "#191A21" or "#D6ACFF"
+			return buffer.is_focused and "#191A21" or "#BBBBBB"
 		end,
 		bg = function(buffer)
-			return buffer.is_focused and "#FF92DF" or "#BD93F9"
+			return buffer.is_focused and "#BD93F9" or "#3E4452"
 		end,
 	},
 	sidebar = {
 		filetype = "NvimTree",
 		components = {
 			{
-				text = "  NvimTree",
-				fg = "#f1fa8c",
+				text = "  NvimTree 󰙅",
+				fg = "#8BE9FD",
 				bg = get_hex("Normal", "bg"),
 				style = "bold",
 			},
@@ -38,7 +38,7 @@ cokeline.setup({
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and "#FF92DF" or "#BD93F9"
+				return buffer.is_focused and "#BD93F9" or "#3E4452"
 			end,
 
 			bg = get_hex("Normal", "bg"),
@@ -69,7 +69,7 @@ cokeline.setup({
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and "#FF92DF" or "#BD93F9"
+				return buffer.is_focused and "#BD93F9" or "#3E4452"
 			end,
 			bg = get_hex("Normal", "bg"),
 		},
