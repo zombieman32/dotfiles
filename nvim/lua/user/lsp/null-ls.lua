@@ -32,7 +32,6 @@ null_ls.setup({
 		diagnostics.hadolint,
 		diagnostics.clj_kondo,
 		diagnostics.ktlint,
-		diagnostics.markdownlint,
 		diagnostics.rubocop,
 		diagnostics.selene,
 		diagnostics.sqlfluff,
