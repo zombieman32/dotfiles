@@ -1,7 +1,6 @@
 
 # dotfiles
 
----
 My dotfiles for:
 
 - Fish
@@ -16,7 +15,9 @@ My dotfiles for:
 - Spotify-tui
 
 <details>
-  <summary>Neovim</summary>
+<summary>
+- Neovim
+</summary>
   <br>
 
   - packer
