@@ -15,10 +15,11 @@ My dotfiles for:
 - Spotify-tui
 
 <details>
+  <summary>
 
-  <summary>Neovim</summary>
+    - Neovim
+  </summary>
 
-  -
     - packer
     - popup
     - plenary
@@ -79,4 +80,4 @@ My dotfiles for:
     - treesitter
     - nvim-ts-rainbow
     - vim-tmux-navigator
-  - </details>
+  </details>
