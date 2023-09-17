@@ -16,9 +16,10 @@ My dotfiles for:
 - Neovim
 <details>
   <summary></summary>
-  - packer
-  - popup
-  - plenary
+
+    - packer
+    - popup
+    - plenary
   - vim-closetag
   - vim-polyglot
   - nvim-autopairs
