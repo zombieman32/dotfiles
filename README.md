@@ -13,13 +13,8 @@ My dotfiles for:
 - Thefuck
 - Tmux
 - Spotify-tui
--
-<details>
-<summary>
-
 - Neovim
-</summary>
-  <br>
+<details>
 
   - packer
   - popup
