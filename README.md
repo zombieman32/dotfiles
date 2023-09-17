@@ -13,13 +13,14 @@ My dotfiles for:
 - Thefuck
 - Tmux
 - Spotify-tui
-- Neovim
+-
 <details>
-  <summary></summary>
+
+  - <summary>Neovim</summary>
 
     - packer
-    - popup
-    - plenary
+  - popup
+  - plenary
   - vim-closetag
   - vim-polyglot
   - nvim-autopairs
