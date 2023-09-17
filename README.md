@@ -11,8 +11,26 @@ My dotfiles for:
 - Neofetch
 - Qutebrowser
 - Thefuck
-- Tmux
 - Spotify-tui
+
+- <details>
+  <summary>Tmux</summary>
+  
+  - tpm
+  - tmux-sensible
+  - tmux-logging
+  - tmux-resurrect
+  - tmux-autoreload
+  - tmux-mouse-swipe
+  - tmux-mighty-scroll
+  - tmux-menus
+  - muxile
+  - vim-tmux-navigator
+  - tmux-yank
+  - dracula
+  - tmux-open-nvim
+  - tmux-spotify
+  </details>
 - <details>
   <summary>Neovim</summary>
 
