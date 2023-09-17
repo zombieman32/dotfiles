@@ -13,10 +13,11 @@ My dotfiles for:
 - Thefuck
 - Tmux
 - Spotify-tui
-
-- <details>
+-
+<details>
 <summary>
-Neovim
+
+- Neovim
 </summary>
   <br>
 
