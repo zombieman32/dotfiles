@@ -13,11 +13,9 @@ My dotfiles for:
 - Thefuck
 - Tmux
 - Spotify-tui
-- Neovim
 - <details>
   <summary>Neovim</summary>
 
-  - Plugins:
     - packer
     - popup
     - plenary
