@@ -15,8 +15,8 @@ My dotfiles for:
 - Spotify-tui
 - Neovim
 <details>
-  <summary>
-  </summary>
+
+  - <summary>Neovim</summary>
 
   - Plugins:
     - packer
