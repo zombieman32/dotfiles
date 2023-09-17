@@ -143,6 +143,28 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+	use({
+		"epwalsh/obsidian.nvim",
+		requires = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+			"nvim-telescope/telescope.nvim",
+			-- see below for full list of optional dependencies 👇
+		},
+		config = function()
+			require("obsidian").setup({
+				dir = "~/my-vault",
+
+				-- see below for full list of options 👇
+			})
+		end,
+	})
+
+	--Clojure
+	use("clojure-vim/acid.nvim")
+	use("Vigemus/impromptu.nvim")
+	use("clojure-vim/jazz.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
