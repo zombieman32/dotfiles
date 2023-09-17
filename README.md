@@ -14,9 +14,8 @@ My dotfiles for:
 - Tmux
 - Spotify-tui
 - Neovim
-<details>
-
-  - <summary>Neovim</summary>
+- <details>
+  <summary>Neovim</summary>
 
   - Plugins:
     - packer
