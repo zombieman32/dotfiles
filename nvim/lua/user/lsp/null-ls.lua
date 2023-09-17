@@ -36,7 +36,6 @@ null_ls.setup({
 		diagnostics.selene,
 		diagnostics.sqlfluff,
 		diagnostics.stylelint,
-		diagnostics.vale,
 		diagnostics.buildifier,
 		diagnostics.curlylint,
 		diagnostics.vint,
