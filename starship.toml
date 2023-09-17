@@ -31,10 +31,7 @@ light_gray = "#bbbbbb"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
-
-[conda]
-disabled = true
+disabled = false
 
 [sudo]
 disabled = false
