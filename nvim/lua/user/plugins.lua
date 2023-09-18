@@ -87,7 +87,6 @@ return packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("bluz71/vim-moonfly-colors")
 	use("savq/melange-nvim")
-	use("AlphaTechnolog/onedarker.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("tiagovla/tokyodark.nvim")
 
