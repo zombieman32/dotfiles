@@ -1,4 +1,14 @@
 local configs = require("nvim-treesitter.configs")
+
+
+vim.api.nvim_set_hl(0, '@keyword', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@def', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@string', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@conditional', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@repeat', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@exception', {italic = true, bold = true})
+vim.api.nvim_set_hl(0, '@type', {undercurl = true})
+
 configs.setup {
   ensure_installed = "all",
   sync_install = true,
