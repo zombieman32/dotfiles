@@ -12,7 +12,7 @@ scan_timeout = 10
  
 command_timeout = 1000
 
-palette = 'dracula'
+palette = 'onedark'
 
 [palettes.dracula]
 white = "#f8f8f2"
@@ -24,6 +24,19 @@ yellow = "#f0fa8b"
 purple = "#bd92f8"
 pink = "#ff78c5"
 cyan = "#8ae9fc"
+light_gray = "#bbbbbb"
+
+[palettes.onedark]
+white = "#abb2bf"
+black = "#282c34"
+gray = "#5c6370"
+red = "#ef596f"
+orange = "#d19a66"
+blue = "#61afef"
+green = "#89ca78"
+yellow = "#e5c07b"
+purple = "#d55fde"
+cyan = "#2bbac5"
 light_gray = "#bbbbbb"
 
 # Disable the package module, hiding it from the prompt completely
@@ -59,7 +72,7 @@ time_format = "%k:%M"
 style = "bold cyan"
 
 [directory]
-style = 'purple'
+style = 'italic purple'
 truncation_symbol = '.../'
 
 [git_branch]
