@@ -5,17 +5,30 @@ end
 
 local get_hex = require("cokeline/utils").get_hex
 
+local switch = {
+	[1] = "#ef596f",
+	[2] = "#d19a66",
+	[3] = "#e5c07b",
+	[4] = "#89ca78",
+	[5] = "#2bbac5",
+	[6] = "#61afef",
+	[0] = "#d55fde",
+}
+
 cokeline.setup({
 	buffers = {
 		focus_on_delete = "prev",
 		new_buffers_position = "next",
 	},
+	pick = {
+		use_filename = false,
+	},
 	default_hl = {
 		fg = function(buffer)
-			return buffer.is_focused and "#191A21" or "#BBBBBB"
+			return buffer.is_focused and "#282c34" or "#ABB2BF"
 		end,
 		bg = function(buffer)
-			return buffer.is_focused and "#BD93F9" or "#3E4452"
+			return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
 		end,
 	},
 	sidebar = {
@@ -38,7 +51,7 @@ cokeline.setup({
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and "#BD93F9" or "#3E4452"
+				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
 			end,
 
 			bg = get_hex("Normal", "bg"),
@@ -48,7 +61,7 @@ cokeline.setup({
 				return buffer.devicon.icon
 			end,
 			fg = function(buffer)
-				return buffer.devicon.color
+				return buffer.is_focused and "#282c34" or buffer.devicon.color
 			end,
 		},
 		{
@@ -59,7 +72,7 @@ cokeline.setup({
 				return buffer.filename .. "  "
 			end,
 			style = function(buffer)
-				return buffer.is_focused and "bold" or nil
+				return buffer.is_focused and "italic,bold" or nil
 			end,
 		},
 		{
@@ -69,7 +82,7 @@ cokeline.setup({
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and "#BD93F9" or "#3E4452"
+				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
 			end,
 			bg = get_hex("Normal", "bg"),
 		},
