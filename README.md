@@ -27,7 +27,7 @@ My dotfiles for:
   - muxile
   - vim-tmux-navigator
   - tmux-yank
-  - dracula
+  - tmux-onedark
   - tmux-open-nvim
   - tmux-spotify
   </details>
