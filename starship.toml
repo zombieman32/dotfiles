@@ -3,9 +3,9 @@
 
 # Use custom format
 format = '''
-[╔═══════════════════](green) $sudo$username $os  $time
-[╠═](green) $directory $git_branch $git_commit $git_metrics
-[╚════](green) '''
+[->](cyan) $sudo$username $os  $time
+$directory $package $git_branch $git_commit $git_metrics
+[~~>](blue) '''
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
@@ -67,7 +67,7 @@ Debian = "󰣚"
 
 [time]
 disabled = false
-format = "[ |$time|]($style) "
+format = "[ $time]($style) "
 time_format = "%k:%M"
 style = "bold cyan"
 
@@ -76,7 +76,7 @@ style = 'italic purple'
 truncation_symbol = '.../'
 
 [git_branch]
-format = "[󰊢 $symbol$branch(:$remote_branch)]($style)"
+format = "[󰊢  $symbol$branch(:$remote_branch)]($style)"
 style = "red"
 symbol = ""
 
