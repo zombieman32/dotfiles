@@ -77,7 +77,7 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guides
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" }) -- File Tree
-	use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }) -- Markdown preview
+	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" }) -- Markdown preview
 
 	-- Color themes
 	use("rebelot/kanagawa.nvim")
@@ -123,7 +123,7 @@ return packer.startup(function(use)
 	use("niuiic/core.nvim")
 	use({
 		"mawkler/modicator.nvim",
-		after = "dracula.nvim", -- Add your colorscheme plugin here
+		after = "onedarkpro.nvim", -- Add your colorscheme plugin here
 		setup = function()
 			-- These are required for Modicator to work
 			vim.o.cursorline = true
