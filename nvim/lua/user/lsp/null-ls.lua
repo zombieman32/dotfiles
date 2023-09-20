@@ -23,6 +23,7 @@ null_ls.setup({
 		formatting.sqlfmt,
 		formatting.buildifier,
 		formatting.fourmolu,
+		formatting.shfmt,
 		formatting.stylua,
 		diagnostics.flake8,
 		diagnostics.checkstyle,
