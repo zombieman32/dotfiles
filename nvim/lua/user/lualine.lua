@@ -78,7 +78,7 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "onedark_vivid",
-		component_separators = { left = "", right = "" },
+		component_separators = { left = ")", right = "(" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
@@ -88,7 +88,7 @@ lualine.setup({
 		lualine_b = { mode },
 		lualine_c = {filename},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { cat, diff, spaces, "encoding", filetype },
+		lualine_x = { cat, diff, spaces, filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
