@@ -82,10 +82,40 @@ battery_status()
     *)
       ;;
   esac
-
+  percent=$(linux_acpi percent)
   case $status in
     discharging|Discharging)
-      echo '󰁾'
+      if ((100>$percent && 90<=$percent))
+      then
+          echo '󰂂'
+      elif ((90>$percent && 80<=$percent))
+      then
+          echo '󰂁'
+      elif ((80>$percent && 70<=$percent))
+      then
+          echo '󰂀'
+      elif ((70>$percent && 60<=$percent))
+      then
+          echo '󰁿'
+      elif ((60>$percent && 50<=$percent))
+      then
+          echo '󰁾'
+      elif ((50>$percent && 40<=$percent))
+      then
+          echo '󰁽'
+      elif ((40>$percent && 30<=$percent))
+      then
+          echo '󰁼'
+      elif ((30>$percent && 20<=$percent))
+      then
+          echo '󰁻'
+      elif ((20>$percent && 10<=$percent))
+      then
+          echo '󰁻'
+      elif ((10>$percent && 0<=$percent))
+      then
+          echo '󱃍'
+      fi
       ;;
     high|Full)
       echo '󰁹'
