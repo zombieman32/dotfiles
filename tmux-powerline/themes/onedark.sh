@@ -25,15 +25,11 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 if [ -z $TMUX_POWERLINE_WINDOW_STATUS_CURRENT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_CURRENT=(
 		"#[fg=#61afef bg=#282c34]" \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD" \
-		"#[bg=#61afef fg=#282c34]" \
-		" #I " \
-		"#[bg=#61afef fg=#282c34]" \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" \
-		"#[bg=#61afef fg=#282c34]" \
-		" #W " \
-		"#[fg=#61afef bg=#282c34]" \
 		"$TMUX_POWERLINE_SEPARATOR_LEFT_BOLD" \
+		"#[bg=#61afef fg=#282c34]" \
+		" #I ) #W "
+		"#[fg=#61afef bg=#282c34]" \
+		"$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD" \
 	)
 fi
 
@@ -46,9 +42,7 @@ fi
 if [ -z $TMUX_POWERLINE_WINDOW_STATUS_FORMAT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=(
 		"#[$(format regular)]" \
-		"  #I " \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" \
-		" #W "
+		"  #I | #W " \
 	)
 fi
 
@@ -82,7 +76,7 @@ fi
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		"hostname #ef596f #282c34" \
-		"logo" \
+		"logo "\
 		#"tmux_session_info 89ca78 282c34" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
