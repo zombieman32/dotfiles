@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
-local get_hex = require("cokeline/utils").get_hex
-
 local switch = {
 	[1] = "#ef596f",
 	[2] = "#d19a66",
@@ -37,7 +35,7 @@ cokeline.setup({
 			{
 				text = "  NvimTree 󰙅",
 				fg = "#8BE9FD",
-				bg = get_hex("Normal", "bg"),
+				bg = "#282c34",
 				style = "bold",
 			},
 		},
@@ -46,7 +44,7 @@ cokeline.setup({
 	components = {
 		{
 			text = " ",
-			bg = get_hex("Normal", "bg"),
+			bg = "#282c34",
 		},
 		{
 			text = "█",
@@ -54,7 +52,7 @@ cokeline.setup({
 				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
 			end,
 
-			bg = get_hex("Normal", "bg"),
+			bg = "#282c34",
 		},
 		{
 			text = function(buffer)
@@ -84,7 +82,7 @@ cokeline.setup({
 			fg = function(buffer)
 				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
 			end,
-			bg = get_hex("Normal", "bg"),
+			bg = "#282c34",
 		},
 	},
 	mappings = {
