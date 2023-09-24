@@ -30,15 +30,14 @@ keymap("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
 keymap("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", opts)
-keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
-keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
-keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
-keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
+keymap("n", "<S-l>", ":bnext<cr>", opts)
+keymap("n", "<S-h>", ":bprev<cr>", opts)
+-- keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", opts)
+-- keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
+-- keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
+-- keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
+-- keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
 keymap("n", "<S-c>", ":bdelete<CR>", opts)
--- keymap("n", "<S-k>", ":BufferLineMoveNext<CR>", opts)
--- keymap("n", "<S-j>", ":BufferLineMovePrev<CR>", opts)
--- keymap("n", "<S-p>", ":BufferLinePick<CR>", opts)
 
 -- Close all windows but focused
 keymap("n", "<C-o>", ":only<CR>", opts)
@@ -84,8 +83,11 @@ keymap("v", "'", "di''<esc>hp", opts) -- Surround selected text in single quotes
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap(
 	"n",
-	"<leader>f",
+	"<C-f>",
 	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
 	opts
 )
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- ToggleTerm --
+keymap("n", "<A-Enter>", "<Cmd>ToggleTerm<CR>", opts)

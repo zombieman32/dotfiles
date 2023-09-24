@@ -73,6 +73,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- Icons
 	use("moll/vim-bbye")
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use('tamton-aquib/staline.nvim') -- Status line and buffer line
 	use("junegunn/rainbow_parentheses.vim") -- Color pairs of brackets
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guides
@@ -121,18 +122,12 @@ return packer.startup(function(use)
 		},
 	})
 	use("niuiic/core.nvim")
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  		require("toggleterm").setup()
+	end}
 	use({
 		"mawkler/modicator.nvim",
 		after = "onedarkpro.nvim", -- Add your colorscheme plugin here
-		setup = function()
-			-- These are required for Modicator to work
-			vim.o.cursorline = true
-			vim.o.number = true
-			vim.o.termguicolors = true
-		end,
-		config = function()
-			require("modicator").setup()
-		end,
 	})
 	use({
 		"ziontee113/icon-picker.nvim",
@@ -149,13 +144,10 @@ return packer.startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"hrsh7th/nvim-cmp",
 			"nvim-telescope/telescope.nvim",
-			-- see below for full list of optional dependencies 👇
 		},
 		config = function()
 			require("obsidian").setup({
 				dir = "~/my-vault",
-
-				-- see below for full list of options 👇
 			})
 		end,
 	})
@@ -166,6 +158,7 @@ return packer.startup(function(use)
 			run = ":TSUpdate",
 		},
 	})
+	use 'echasnovski/mini.nvim'
 	--Clojure
 	use("clojure-vim/acid.nvim")
 	use("Vigemus/impromptu.nvim")
