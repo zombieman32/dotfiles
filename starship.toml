@@ -56,7 +56,7 @@ show_always = true
 [os]
 disabled = false
 format = "[$symbol]($style) "
-style = "bold yellow"
+style = "yellow"
 
 [os.symbols]
 Fedora = ""
@@ -78,7 +78,7 @@ truncation_symbol = '.../'
 [git_branch]
 format = "[󰊢  $symbol$branch(:$remote_branch)]($style)"
 style = "red"
-symbol = ""
+symbol = " "
 
 [git_commit]
 disabled = false
