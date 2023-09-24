@@ -7,7 +7,7 @@ vim.api.nvim_set_hl(0, '@string', {italic = true, bold = true})
 vim.api.nvim_set_hl(0, '@conditional', {italic = true, bold = true})
 vim.api.nvim_set_hl(0, '@repeat', {italic = true, bold = true})
 vim.api.nvim_set_hl(0, '@exception', {italic = true, bold = true})
-vim.api.nvim_set_hl(0, '@type', {undercurl = true})
+vim.api.nvim_set_hl(0, '@comment', {italic = true})
 
 configs.setup {
   ensure_installed = "all",
