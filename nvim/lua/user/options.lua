@@ -39,6 +39,7 @@ vim.opt.showcmd = true
 vim.opt.showmatch = true
 vim.opt.history = 1000
 vim.opt.wildmenu = true
+vim.opt.laststatus=2
 vim.loader.enable()
 
 vim.opt.shortmess:append "c"
