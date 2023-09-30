@@ -14,18 +14,6 @@ command_timeout = 1000
 
 palette = 'onedark'
 
-[palettes.dracula]
-white = "#f8f8f2"
-black = "#1e1f28"
-gray = "#545454"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f0fa8b"
-purple = "#bd92f8"
-pink = "#ff78c5"
-cyan = "#8ae9fc"
-light_gray = "#bbbbbb"
-
 [palettes.onedark]
 white = "#abb2bf"
 black = "#282c34"
@@ -73,12 +61,12 @@ style = "bold cyan"
 
 [directory]
 style = 'italic purple'
-truncation_symbol = '.../'
+truncation_symbol = '...'
 
 [git_branch]
-format = "[󰊢  $symbol$branch(:$remote_branch)]($style)"
+format = "[$symbol $branch(:$remote_branch)]($style)"
 style = "red"
-symbol = " "
+symbol = ""
 
 [git_commit]
 disabled = false
