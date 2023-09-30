@@ -1,6 +1,7 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.netrw_use_noswf= 0
 
 require("user.options")
 require("user.keymaps")
@@ -9,10 +10,10 @@ require("user.colorscheme")
 require("user.nvimtree")
 require("user.cmp")
 require("user.lsp")
--- require("user.cokeline")
+require("user.cokeline")
 -- require("user.lualine")
 require("user.staline")
-require("user.stabline")
+-- require("user.stabline")
 require("user.telescope")
 require("user.image")
 require("user.treesitter")
