@@ -22,12 +22,8 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 
 if [ -z $TMUX_POWERLINE_WINDOW_STATUS_CURRENT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_CURRENT=(
-		"#[fg=#61afef bg=#282c34]" \
-		"$TMUX_POWERLINE_SEPARATOR_LEFT_BOLD" \
-		"#[bg=#61afef fg=#282c34]" \
-		" #I ) #W "
-		"#[fg=#61afef bg=#282c34]" \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD" \
+		"#[fg=#d55fde bg=#282c34]" \
+		"#I: " \
 	)
 fi
 
@@ -40,7 +36,7 @@ fi
 if [ -z $TMUX_POWERLINE_WINDOW_STATUS_FORMAT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=(
 		"#[$(format regular)]" \
-		"  #I | #W " \
+		"#I: #W" \
 	)
 fi
 
