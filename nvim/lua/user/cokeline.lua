@@ -20,6 +20,7 @@ cokeline.setup({
 	},
 	pick = {
 		use_filename = false,
+		letters = '<123456789qwertyuiopasdfghjklñzxcvbnm,.',
 	},
 	default_hl = {
 		fg = function(buffer)

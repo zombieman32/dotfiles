@@ -30,14 +30,14 @@ keymap("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
 keymap("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<cr>", opts)
-keymap("n", "<S-h>", ":bprev<cr>", opts)
--- keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", opts)
--- keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
--- keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
--- keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
--- keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
-keymap("n", "<S-c>", ":bdelete<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<cr>", opts)
+-- keymap("n", "<S-h>", ":bprev<cr>", opts)
+keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", opts)
+keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
+keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
+keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
+keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
+keymap("n", "<S-c>", "<Plug>(cokeline-pick-close)", opts)
 
 -- Close all windows but focused
 keymap("n", "<C-o>", ":only<CR>", opts)
@@ -62,8 +62,8 @@ keymap("n", "<A-h>", ":vsplit<cr>", opts)
 keymap("n", "<A-v>", ":split<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<A-Up>", ":resize +2<CR>", opts)
-keymap("n", "<A-Down>", ":resize -2<CR>", opts)
+keymap("n", "<A-+>", ":resize +2<CR>", opts)
+keymap("n", "<A-->", ":resize -2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
