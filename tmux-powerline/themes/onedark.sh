@@ -1,5 +1,3 @@
-# Default Theme
-
 if patched_font_in_use; then
 	TMUX_POWERLINE_SEPARATOR_LEFT_BOLD=""
 	TMUX_POWERLINE_SEPARATOR_LEFT_THIN="("
@@ -75,8 +73,8 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
+		"logo default default {TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD} default default left_disable separator_disable"\
 		"hostname #ef596f #282c34" \
-		"logo "\
 		#"tmux_session_info 89ca78 282c34" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
