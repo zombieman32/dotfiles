@@ -3,7 +3,7 @@
 
 # Use custom format
 format = '''
-[->](cyan) $sudo$username $os $time
+[->>](cyan) $sudo$username $os $time
 $directory $package $git_branch $git_commit $git_metrics
 [~~>](blue) '''
 
