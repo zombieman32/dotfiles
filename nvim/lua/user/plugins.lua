@@ -128,6 +128,14 @@ return packer.startup(function(use)
 	use({
 		"mawkler/modicator.nvim",
 		after = "onedarkpro.nvim", -- Add your colorscheme plugin here
+		setup = function ()
+			vim.o.cursorline = true
+			vim.o.number = true
+			vim.o.termguicolors = true
+		end,
+		config = function ()
+			require('modicator').setup({})
+		end
 	})
 	use({
 		"ziontee113/icon-picker.nvim",
@@ -181,6 +189,6 @@ return packer.startup(function(use)
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
-		require("packer").sync()
+		require("packer").update()
 	end
 end)
