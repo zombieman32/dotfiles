@@ -30,6 +30,7 @@ My dotfiles for:
   - tmux-powerline
   - tmux-open-nvim
   - tmux-spotify
+  - tmux-pomodoro-plus
   </details>
 - <details>
   <summary>Neovim</summary>
