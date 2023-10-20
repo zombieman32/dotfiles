@@ -24,7 +24,7 @@ masonti.setup({
 	"cpplint",
 	"eslint_d",
 	"hadolint",
-	"clj_kondo",
+	"clj-kondo",
 	"selene",
 	"sqlfluff",
 	"stylelint",
