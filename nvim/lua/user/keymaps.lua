@@ -37,7 +37,7 @@ keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
 keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
 keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
 keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
-keymap("n", "<S-c>", "<Plug>(cokeline-pick-close)", opts)
+keymap("n", "<S-c>", ":bd<CR>", opts)
 
 -- Close all windows but focused
 keymap("n", "<C-o>", ":only<CR>", opts)
