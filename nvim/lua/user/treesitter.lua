@@ -11,7 +11,6 @@ vim.api.nvim_set_hl(0, '@comment', {italic = true})
 
 configs.setup {
   ensure_installed = "all",
-  sync_install = true,
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
