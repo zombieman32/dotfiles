@@ -186,6 +186,8 @@ return packer.startup(function(use)
 	--Tmux integration
 	use("christoomey/vim-tmux-navigator")
 
+	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
