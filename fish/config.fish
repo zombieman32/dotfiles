@@ -26,3 +26,15 @@ thefuck --alias | source
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+set --export DENO_INSTALL "$HOME/.deno"
+set --export PATH $DENO_INSTALL/bin $PATH
+set --export CARGO_INSTALL "$HOME/.cargo/"
+set --export PATH $CARGO_INSTALL/bin $PATH
+set --export CABAL_INSTALL "$HOME/.cabal/"
+set --export PATH $CABAL_INSTALL/bin $PATH
+set --export GHCUP_INSTALL "$HOME/.ghcup/"
+set --export PATH $GHCUP_INSTALL/bin $PATH
+set --export BREW_INSTALL "/home/linuxbrew/.linuxbrew/"
+set --export PATH $BREW_INSTALL/bin $PATH
+set --export PATH $BREW_INSTALL/sbin $PATH
+fish_add_path /home/zombie/.spicetify
