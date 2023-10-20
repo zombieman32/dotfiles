@@ -7,6 +7,7 @@ format = '''
 $directory $package $git_branch $git_commit $git_metrics
 [~~>](blue) '''
 
+right_format ="""$all""" 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
  
@@ -81,3 +82,41 @@ format = "([ $added]($added_style) )([ $deleted]($deleted_style))"
 added_style = "green"
 deleted_style = "red"
 
+[python]
+symbol = '󰌠 '
+pyenv_version_name = true
+
+[ruby]
+symbol = '󰴭 '
+
+[rust]
+symbol = '󱘗 '
+
+[c]
+symbol = ' '
+
+[docker_context]
+symbol = '󰡨 '
+
+[haskell]
+symbol = '󰲒 '
+
+[java]
+symbol = '󰬷 '
+
+[kotlin]
+symbol = '󱈙 '
+
+[kubernetes]
+symbol = '󱃾 '
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold green) '
+disabled = false
+
+[lua]
+symbol = '󰢱 '
+
+[terraform]
+symbol = '󱁢 '
