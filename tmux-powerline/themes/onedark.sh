@@ -94,7 +94,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"now_playing 234 37" \
 		#"cpu 240 136" \
 		#"load 237 167" \
-		"spotify-tui #89ca78 #282c34"
+		"spotify-tui #89ca78 #282c34" \
 		"tmux-mem-cpu-load #e5c07b #282c34" \
 		"tmux-battery #61afef #282c34" \
 		#"weather 37 255" \
