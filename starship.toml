@@ -5,7 +5,7 @@
 format = '''
 [->>](cyan) $sudo$username $os $time
 $directory $package $git_branch $git_commit $git_metrics
-[~~>](blue) '''
+[~~>](blue ) '''
 
 right_format ="""$all""" 
 # Wait 10 milliseconds for starship to check files under the current directory.
@@ -29,6 +29,9 @@ cyan = "#2bbac5"
 light_gray = "#bbbbbb"
 
 # Disable the package module, hiding it from the prompt completely
+[character]
+success_symbol = "[✔](bold green)"
+error_symbol = "[✘](bold red)"
 [package]
 disabled = false
 
@@ -112,7 +115,8 @@ symbol = '󱃾 '
 
 [localip]
 ssh_only = false
-format = '@[$localipv4](bold green) '
+format = '[@$localipv4]($style) '
+style = "bold green underline"
 disabled = false
 
 [lua]
