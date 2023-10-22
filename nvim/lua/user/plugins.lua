@@ -188,6 +188,8 @@ return packer.startup(function(use)
 
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
 
+	use('mbbill/undotree')
+	use("tidalcycles/vim-tidal")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
