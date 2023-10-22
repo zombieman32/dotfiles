@@ -91,3 +91,15 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- ToggleTerm --
 keymap("n", "<A-Enter>", "<Cmd>ToggleTerm<CR>", opts)
+
+keymap("n", "<F5>", "<Cmd>UndotreeToggle<CR>", opts)
+
+if vim.bo.filetype == "tidal" then
+	keymap("i", "billybd", "[t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~]", opts)
+	keymap("i", "billysn", "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]", opts)
+	keymap("i", "billych", "[t ~ t ~] [t ~ t ~] [t ~ t ~] [t ~ t ~]", opts)
+	keymap("i", "bluemondaybd", "[t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~]", opts)
+	keymap("i", "bluemondaysn", "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]", opts)
+	keymap("i", "bluemondaycp", "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]", opts)
+	keymap("i", "bluemondayoh", "[~ ~ t ~] [~ ~ t ~] [~ ~ t ~] [~ ~ t ~]", opts)
+end
