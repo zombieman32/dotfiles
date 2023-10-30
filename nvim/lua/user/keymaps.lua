@@ -62,8 +62,8 @@ keymap("n", "<A-h>", ":vsplit<cr>", opts)
 keymap("n", "<A-v>", ":split<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<A-+>", ":resize +2<CR>", opts)
-keymap("n", "<A-->", ":resize -2<CR>", opts)
+keymap("n", "<A-Up>", ":resize +2<CR>", opts)
+keymap("n", "<A-Down>", ":resize -2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
@@ -103,3 +103,7 @@ if vim.bo.filetype == "tidal" then
 	keymap("i", "bluemondaycp", "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]", opts)
 	keymap("i", "bluemondayoh", "[~ ~ t ~] [~ ~ t ~] [~ ~ t ~] [~ ~ t ~]", opts)
 end
+
+
+keymap("n", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot normal Mode
+keymap("v", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot visual mode
