@@ -95,4 +95,15 @@ My dotfiles for:
     - treesitter
     - nvim-ts-rainbow
     - vim-tmux-navigator
+    - codeshot
+    - vim-markdown-composer
+    - multicursors
+    - mason-tool-installer
+    - undo-tree
+    - vim-tidal
+    - neomake
+    - octo
+    - nvim-treesitter-context
+    - sniprun
+    - comment
   </details>
