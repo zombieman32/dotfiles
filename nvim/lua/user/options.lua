@@ -23,9 +23,9 @@ vim.opt.writebackup = false                     -- if a file is being edited by 
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
-vim.opt.cursorline = true                       -- highlight the current line
+vim.o.cursorline = true                       -- highlight the current line
 vim.opt.cursorcolumn = false						-- highlight the current column
-vim.opt.number = true                          -- set numbered lines
+vim.o.number = true                          -- set numbered lines
 vim.opt.relativenumber = true                  -- set relative numbered lines
 vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
@@ -40,6 +40,8 @@ vim.opt.showmatch = true
 vim.opt.history = 1000
 vim.opt.wildmenu = true
 vim.opt.laststatus=2
+vim.g.markdown_composer_autostart = 0
+vim.g.markdown_composer_browser = "epiphany",
 vim.loader.enable()
 
 vim.opt.shortmess:append "c"
