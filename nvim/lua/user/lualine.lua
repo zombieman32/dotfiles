@@ -127,7 +127,6 @@ end
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
-	
 	-- { "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂁", "󰁹" }
 	local chars = {"","","","","","","","","","","","","","",""}
 	local line_ratio = current_line / total_lines
@@ -137,6 +136,19 @@ end
 
 local spaces = function()
 	return "spaces " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+end
+
+local function is_active()
+    local ok, hydra = pcall(require, 'hydra.statusline')
+    return ok and hydra.is_active()
+end
+
+local function get_name()
+    local ok, hydra = pcall(require, 'hydra.statusline')
+    if ok then
+        return hydra.get_name()
+    end
+    return ''
 end
 
 lualine.setup({
@@ -150,7 +162,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
+		lualine_b = { mode, {get_name, cond = is_active} },
 		lualine_c = {filename},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { cat, diff, spaces, filetype },
@@ -160,7 +172,7 @@ lualine.setup({
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
+		lualine_c = {},
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},
