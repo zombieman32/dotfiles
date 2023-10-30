@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guides
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" }) -- File Tree
-	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" }) -- Markdown preview
+	use("euclio/vim-markdown-composer")
 
 	-- Color themes
 	use("rebelot/kanagawa.nvim")
@@ -113,8 +113,12 @@ return packer.startup(function(use)
 	-- Misc
 	use("andweeb/presence.nvim") -- Discord integration
 	use("stevearc/dressing.nvim") -- Better UI
-	use("smoka7/multicursors.nvim")
-	use({ "m00qek/baleia.nvim", tag = "v1.3.0" })
+	use({
+    	"smoka7/multicursors.nvim",
+    	requires = {
+        	'smoka7/hydra.nvim',
+    	},
+	})
 	use({
 		"samodostal/image.nvim",
 		requires = {
@@ -122,9 +126,9 @@ return packer.startup(function(use)
 		},
 	})
 	use("niuiic/core.nvim")
-	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+	use({"akinsho/toggleterm.nvim", tag = '*', config = function()
   		require("toggleterm").setup()
-	end}
+	end})
 	use({
 		"mawkler/modicator.nvim",
 		after = "onedarkpro.nvim", -- Add your colorscheme plugin here
@@ -190,7 +194,33 @@ return packer.startup(function(use)
 
 	use('mbbill/undotree')
 	use("tidalcycles/vim-tidal")
-	-- Automatically set up your configuration after cloning packer.nvim
+
+	use('neomake/neomake')
+	use {
+	  'pwntester/octo.nvim',
+	  requires = {
+	    'nvim-lua/plenary.nvim',
+	    'nvim-telescope/telescope.nvim',
+	    'nvim-tree/nvim-web-devicons',
+	  },
+	  config = function ()
+	    require"octo".setup()
+	  end
+	}
+	use("nvim-treesitter/nvim-treesitter-context")
+	use {"niuiic/code-shot.nvim",
+		require = {
+				"niuiic/core.nvim"
+		}
+	}
+ 	use { 'michaelb/sniprun', run = 'sudo sh ./install.sh'}
+	use {
+	    'numToStr/Comment.nvim',
+	    config = function()
+	        require('Comment').setup()
+	    end
+	}
+		-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").update()
