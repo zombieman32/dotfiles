@@ -37,4 +37,5 @@ set --export PATH $GHCUP_INSTALL/bin $PATH
 set --export BREW_INSTALL "/home/linuxbrew/.linuxbrew/"
 set --export PATH $BREW_INSTALL/bin $PATH
 set --export PATH $BREW_INSTALL/sbin $PATH
+set --export PATH /home/zombie/.local/bin/ $PATH
 fish_add_path /home/zombie/.spicetify
