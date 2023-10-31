@@ -69,9 +69,9 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"logo default default {TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD} default default left_disable separator_disable"\
+		"logo default default ${TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD} default default left_disable separator_disable"\
 		"hostname #ef596f #282c34" \
-		"pomodoro #e5c07b #282c34" \
+		"pomodoro #ef596f #282c34 ${TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD} default default left_disable" \
 		#"tmux_session_info 89ca78 282c34" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
