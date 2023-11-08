@@ -12,6 +12,7 @@ My dotfiles for:
 - Qutebrowser
 - Thefuck
 - Spotify-tui
+- mpv
 
 - <details>
   <summary>Tmux</summary>
@@ -30,7 +31,6 @@ My dotfiles for:
   - tmux-powerline
   - tmux-open-nvim
   - tmux-spotify
-  - tmux-pomodoro-plus
   </details>
 - <details>
   <summary>Neovim</summary>
@@ -106,4 +106,8 @@ My dotfiles for:
     - nvim-treesitter-context
     - sniprun
     - comment
+    - orgmode
+    - org-bullets
+    - headlines
+    - vim-table-mode
   </details>
