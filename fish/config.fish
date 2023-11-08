@@ -38,4 +38,7 @@ set --export BREW_INSTALL "/home/linuxbrew/.linuxbrew/"
 set --export PATH $BREW_INSTALL/bin $PATH
 set --export PATH $BREW_INSTALL/sbin $PATH
 set --export PATH /home/zombie/.local/bin/ $PATH
+set --export PATH /home/zombie/.luaver/ $PATH
+set --export STEAM_LIBRARY /hdd/SteamLibrary
+set --export PATH /usr/local/noweb/ $PATH
 fish_add_path /home/zombie/.spicetify
