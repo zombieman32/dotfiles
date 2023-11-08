@@ -4,7 +4,7 @@ run_segment(){
     time=$(pomodoro status -f "%r")
     stop="0:00"
     if  [ -z "$status"]; then
-        exit 1
+        echo " "
     elif [ "$time" = "$stop" ]; then
         echo " Break"
     else
