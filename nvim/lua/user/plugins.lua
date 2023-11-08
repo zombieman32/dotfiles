@@ -73,7 +73,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- Icons
 	use("moll/vim-bbye")
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
-	use('tamton-aquib/staline.nvim') -- Status line and buffer line
+	use("tamton-aquib/staline.nvim") -- Status line and buffer line
 	use("junegunn/rainbow_parentheses.vim") -- Color pairs of brackets
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guides
@@ -114,10 +114,10 @@ return packer.startup(function(use)
 	use("andweeb/presence.nvim") -- Discord integration
 	use("stevearc/dressing.nvim") -- Better UI
 	use({
-    	"smoka7/multicursors.nvim",
-    	requires = {
-        	'smoka7/hydra.nvim',
-    	},
+		"smoka7/multicursors.nvim",
+		requires = {
+			"smoka7/hydra.nvim",
+		},
 	})
 	use({
 		"samodostal/image.nvim",
@@ -126,20 +126,24 @@ return packer.startup(function(use)
 		},
 	})
 	use("niuiic/core.nvim")
-	use({"akinsho/toggleterm.nvim", tag = '*', config = function()
-  		require("toggleterm").setup()
-	end})
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 	use({
 		"mawkler/modicator.nvim",
 		after = "onedarkpro.nvim", -- Add your colorscheme plugin here
-		setup = function ()
+		setup = function()
 			vim.o.cursorline = true
 			vim.o.number = true
 			vim.o.termguicolors = true
 		end,
-		config = function ()
-			require('modicator').setup({})
-		end
+		config = function()
+			require("modicator").setup({})
+		end,
 	})
 	use({
 		"ziontee113/icon-picker.nvim",
@@ -170,7 +174,7 @@ return packer.startup(function(use)
 			run = ":TSUpdate",
 		},
 	})
-	use 'echasnovski/mini.nvim'
+	use("echasnovski/mini.nvim")
 	--Clojure
 	use("clojure-vim/acid.nvim")
 	use("Vigemus/impromptu.nvim")
@@ -187,40 +191,77 @@ return packer.startup(function(use)
 	})
 	use("p00f/nvim-ts-rainbow")
 
-	--Tmux integration
+	-- Tmux integration
 	use("christoomey/vim-tmux-navigator")
 
+	-- Mason installer utility to ensure installed LSP's
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
 
-	use('mbbill/undotree')
+	use("mbbill/undotree")
 	use("tidalcycles/vim-tidal")
 
-	use('neomake/neomake')
-	use {
-	  'pwntester/octo.nvim',
-	  requires = {
-	    'nvim-lua/plenary.nvim',
-	    'nvim-telescope/telescope.nvim',
-	    'nvim-tree/nvim-web-devicons',
-	  },
-	  config = function ()
-	    require"octo".setup()
-	  end
-	}
+	use("neomake/neomake")
+
+	-- Edit and review GitHub issues and pr's
+	use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
+
+	-- Show code context for large functions
 	use("nvim-treesitter/nvim-treesitter-context")
-	use {"niuiic/code-shot.nvim",
+
+	-- Take shots of code
+	use({
+		"niuiic/code-shot.nvim",
 		require = {
-				"niuiic/core.nvim"
-		}
-	}
- 	use { 'michaelb/sniprun', run = 'sudo sh ./install.sh'}
-	use {
-	    'numToStr/Comment.nvim',
-	    config = function()
-	        require('Comment').setup()
-	    end
-	}
-		-- Automatically set up your configuration after cloning packer.nvim
+			"niuiic/core.nvim",
+		},
+	})
+
+	-- Run blocks of code
+	use({ "michaelb/sniprun", run = "sudo sh ./install.sh" })
+
+	-- Smart commenting
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
+	-- OrgMode
+	use({
+		"nvim-orgmode/orgmode",
+		config = function()
+			require("orgmode").setup({})
+		end,
+	})
+	-- Add utf-8 bullet points
+	use({
+		"akinsho/org-bullets.nvim",
+		config = function()
+			require("org-bullets").setup()
+		end,
+	})
+	-- Highlights for markdown orgmode and neorg
+	use({
+		"lukas-reineke/headlines.nvim",
+		after = "nvim-treesitter",
+		config = function()
+			require("headlines").setup()
+		end,
+	})
+	-- Create tables
+	use("dhruvasagar/vim-table-mode")
+	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").update()

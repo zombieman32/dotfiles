@@ -25,6 +25,7 @@ require('mini.animate').setup()
 require("user.masonti")
 require("user.multicursor")
 require("user.codeshot")
+require("user.orgmode")
 
 vim.api.nvim_set_hl(0, 'NormalMode', {fg = "#89ca78", bold = true})
 vim.api.nvim_set_hl(0, 'InsertMode', {fg = "#61afef", bold = true})
