@@ -42,6 +42,10 @@ keymap("n", "<S-c>", ":bd<CR>", opts)
 -- Close all windows but focused
 keymap("n", "<C-o>", ":only<CR>", opts)
 
+-- Undo and redo
+keymap("n", "<S-z>", ":undo<CR>", opts)
+keymap("n", "<S-x>", ":redo<CR>", opts)
+
 -- Nvimtree
 keymap("n", "<A-t>", "<Cmd>NvimTreeToggle<CR>", opts)
 
@@ -68,8 +72,8 @@ keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- Press hj fast to enter
+keymap("i", "hj", "<ESC>", opts)
 
 -- [Visual] --
 keymap("v", "ff", "$", opts)
