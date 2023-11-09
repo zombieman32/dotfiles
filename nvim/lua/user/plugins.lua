@@ -261,6 +261,7 @@ return packer.startup(function(use)
 	})
 	-- Create tables
 	use("dhruvasagar/vim-table-mode")
+	use("tversteeg/registers.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
