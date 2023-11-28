@@ -2,6 +2,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_use_noswf= 0
+vim.o.number = true                          -- set numbered lines
 
 require("user.options")
 require("user.keymaps")
@@ -27,6 +28,12 @@ require("user.multicursor")
 require("user.codeshot")
 require("user.orgmode")
 require("user.registers")
+require("user.whichkey")
+require("user.autocmd")
+require("user.bqnlsp")
+require("user.bqnparser")
+require'lspconfig'.gdscript.setup{}
+require("user.linkvisitor")
 
 vim.api.nvim_set_hl(0, 'NormalMode', {fg = "#89ca78", bold = true})
 vim.api.nvim_set_hl(0, 'InsertMode', {fg = "#61afef", bold = true})
