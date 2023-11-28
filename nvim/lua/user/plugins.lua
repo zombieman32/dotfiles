@@ -108,7 +108,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/mason.nvim") -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
-	use("jose-elias-alvarez/null-ls.nvim") -- LSP diagnostics and code actions
+	use("nvimtools/none-ls.nvim") -- LSP diagnostics and code actions
 
 	-- Misc
 	use("andweeb/presence.nvim") -- Discord integration
@@ -189,6 +189,11 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
 	use("p00f/nvim-ts-rainbow")
 
 	-- Tmux integration
@@ -196,11 +201,26 @@ return packer.startup(function(use)
 
 	-- Mason installer utility to ensure installed LSP's
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- Configs for DAP
+	use("jay-babu/mason-nvim-dap.nvim") -- Better integration for Mason and nvim-dap
+	use("jay-babu/mason-null-ls.nvim")
 
 	use("mbbill/undotree")
 	use("tidalcycles/vim-tidal")
 
 	use("neomake/neomake")
+
+	use("tpope/vim-fugitive") -- Git commands
+	use("tpope/vim-sleuth") -- Adjust shiftwidth and expantab based on current file
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 
 	-- Edit and review GitHub issues and pr's
 	use({
@@ -262,6 +282,22 @@ return packer.startup(function(use)
 	-- Create tables
 	use("dhruvasagar/vim-table-mode")
 	use("tversteeg/registers.nvim")
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	use("habamax/vim-godot")
+	use("uga-rosa/ccc.nvim")
+	use("mlochbaum/BQN")
+	use("xiyaowong/link-visitor.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
