@@ -26,7 +26,6 @@ vim.opt.shiftwidth = 4                          -- the number of spaces inserted
 vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
 vim.o.cursorline = true                       -- highlight the current line
 vim.opt.cursorcolumn = false						-- highlight the current column
-vim.o.number = true                          -- set numbered lines
 vim.opt.relativenumber = true                  -- set relative numbered lines
 vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
@@ -42,8 +41,10 @@ vim.opt.history = 1000
 vim.opt.wildmenu = true
 vim.opt.laststatus=2
 vim.g.markdown_composer_autostart = 0
-vim.g.markdown_composer_browser = "epiphany",
+vim.g.markdown_composer_browser = "epiphany"
 vim.loader.enable()
+vim.o.foldmetod = "syntax"
+vim.o.spelllang = "es-MX"
 
 vim.opt.shortmess:append "c"
 
