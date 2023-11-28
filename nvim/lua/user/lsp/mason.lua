@@ -23,7 +23,8 @@ local servers = {
 	"terraformls",
 	"volar",
 	"yamlls",
-	"taplo"
+	"taplo",
+	"csharp_ls"
 }
 
 local settings = {
