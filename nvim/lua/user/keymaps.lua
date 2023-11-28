@@ -77,11 +77,6 @@ keymap("i", "hj", "<ESC>", opts)
 
 -- [Visual] --
 keymap("v", "ff", "$", opts)
-keymap("v", "(", "di()<esc>hp", opts) -- Surround selected text in parentheses
-keymap("v", "{", "di{}<esc>hp", opts) -- Surround selected text in brackets
-keymap("v", "[", "di[]<esc>hp", opts) -- Surround selected text in square brackets
-keymap("v", '"', 'di""<esc>hp', opts) -- Surround selected text in quotes
-keymap("v", "'", "di''<esc>hp", opts) -- Surround selected text in single quotes
 
 -- Telescope --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
@@ -111,3 +106,5 @@ end
 
 keymap("n", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot normal Mode
 keymap("v", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot visual mode
+keymap("n", "<F12>", "<cmd>:set spell! <CR>", opts) -- Activate spelling
+keymap("i", "<F12>", "<cmd>:set spell! <CR>", opts)
