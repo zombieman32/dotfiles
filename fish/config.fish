@@ -31,22 +31,15 @@ thefuck --alias | source
 
 source ~/.asdf/asdf.fish
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-set --export DENO_INSTALL "$HOME/.deno"
-set --export PATH $DENO_INSTALL/bin $PATH
-set --export CARGO_INSTALL "$HOME/.cargo/"
-set --export PATH $CARGO_INSTALL/bin $PATH
-set --export CABAL_INSTALL "$HOME/.cabal/"
-set --export PATH $CABAL_INSTALL/bin $PATH
-set --export GHCUP_INSTALL "$HOME/.ghcup/"
-set --export PATH $GHCUP_INSTALL/bin $PATH
-set --export BREW_INSTALL "/home/linuxbrew/.linuxbrew/"
-set --export PATH $BREW_INSTALL/bin $PATH
-set --export PATH $BREW_INSTALL/sbin $PATH
-set --export PATH /home/zombie/.local/bin/ $PATH
-set --export PATH /home/zombie/.luaver/ $PATH
 set --export STEAM_LIBRARY /hdd/SteamLibrary
-set --export PATH /usr/local/noweb/ $PATH
+fish_add_path /home/zombie/.bun/bin/
+fish_add_path /home/zombie/.deno/bin/
+fish_add_path /home/zombie/.cargo/bin/
+fish_add_path /home/zombie/.cabal/bin/
+fish_add_path /home/zombie/.ghcup/bin/
+fish_add_path /home/zombie/.local/bin/
+fish_add_path /home/linuxbrew/.linuxbrew/bin/
+fish_add_path /home/linuxbrew/.linuxbrew/sbin/
 fish_add_path /home/zombie/.spicetify
+fish_add_path /home/zombie/.luaver
+fish_add_path /usr/local/noweb/
