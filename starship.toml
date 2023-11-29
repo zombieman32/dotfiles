@@ -124,3 +124,6 @@ symbol = '󰢱 '
 
 [terraform]
 symbol = '󱁢 '
+
+[conda]
+ignore_base = false
