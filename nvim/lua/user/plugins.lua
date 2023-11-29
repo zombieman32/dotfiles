@@ -281,7 +281,6 @@ return packer.startup(function(use)
 	})
 	-- Create tables
 	use("dhruvasagar/vim-table-mode")
-	use("tversteeg/registers.nvim")
 	use({
 		"folke/which-key.nvim",
 		config = function()
@@ -294,10 +293,27 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	use("habamax/vim-godot")
-	use("uga-rosa/ccc.nvim")
-	use("mlochbaum/BQN")
-	use("xiyaowong/link-visitor.nvim")
+	use("habamax/vim-godot") -- Godot integration
+	use("uga-rosa/ccc.nvim") -- Color picker
+	use("https://git.sr.ht/~detegr/nvim-bqn") -- BQN utilities
+	use("xiyaowong/link-visitor.nvim") -- Visit links in a file
+	use({
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup()
+		end,
+	}) -- File explorer with editing capabilities
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+	}) -- File tree
+	use("rebelot/heirline.nvim") -- Status, window and tabline
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
