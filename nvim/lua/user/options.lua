@@ -44,7 +44,8 @@ vim.g.markdown_composer_autostart = 0
 vim.g.markdown_composer_browser = "epiphany"
 vim.loader.enable()
 vim.o.foldmetod = "syntax"
-vim.o.spelllang = "es-MX"
+vim.o.spelllang = "es_mx"
+vim.o.bqn_prefix_key = "."
 
 vim.opt.shortmess:append "c"
 
