@@ -4,6 +4,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_use_noswf= 0
 vim.o.number = true                          -- set numbered lines
 
+require("user.lazy")
 require("user.options")
 require("user.keymaps")
 require("user.plugins")
