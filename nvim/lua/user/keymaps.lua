@@ -2,10 +2,11 @@ local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+local wk = require("which-key")
 
 --Remap space as leader key
-vim.g.mapleader = "."
-vim.g.maplocalleader = "."
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n",
@@ -18,6 +19,13 @@ vim.g.maplocalleader = "."
 -- Normal --
 
 -- Better window navigation
+wk.register({
+	["<S>"] = {
+		name = "navigation",
+		o = {"<cmd>:only<CR>", "Close all but current buffers"} ,
+	}
+})
+
 keymap("n", "<C-Left>", "<C-w>h", opts)
 keymap("n", "<C-Down>", "<C-w>j", opts)
 keymap("n", "<C-Up>", "<C-w>k", opts)
@@ -37,10 +45,10 @@ keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
 keymap("n", "<S-j>", "<Plug>(cokeline-switch-next)", opts)
 keymap("n", "<S-k>", "<Plug>(cokeline-switch-prev)", opts)
 keymap("n", "<S-p>", "<Plug>(cokeline-pick-focus)", opts)
-keymap("n", "<S-c>", ":bd<CR>", opts)
+keymap("n", "<S-c>", "<cmd>:bd<CR>", opts)
 
 -- Close all windows but focused
-keymap("n", "<C-o>", ":only<CR>", opts)
+keymap("n", "<C-o>", "<cmd>:only<CR>", opts)
 
 -- Undo and redo
 keymap("n", "<S-z>", ":undo<CR>", opts)
