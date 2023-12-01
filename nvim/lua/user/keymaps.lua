@@ -111,8 +111,8 @@ if vim.bo.filetype == "tidal" then
 	keymap("i", "bluemondayoh", "[~ ~ t ~] [~ ~ t ~] [~ ~ t ~] [~ ~ t ~]", opts)
 end
 
-
-keymap("n", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot normal Mode
-keymap("v", "<S-s>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot visual mode
+keymap("n", "<F2>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot normal Mode
+keymap("v", "<F2>", "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot visual mode
 keymap("n", "<F12>", "<cmd>:set spell! <CR>", opts) -- Activate spelling
 keymap("i", "<F12>", "<cmd>:set spell! <CR>", opts)
+keymap("n", "<F11>", "<cmd>:ZenMode <CR>", opts)
