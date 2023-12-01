@@ -246,8 +246,8 @@ end
 dashboard.section.footer.val = footer()
 
 dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.header.opts.hl = "String"
+dashboard.section.buttons.opts.hl = "Include"
 
 dashboard.opts.opts.noautocmd = true
 -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
