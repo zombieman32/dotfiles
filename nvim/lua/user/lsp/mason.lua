@@ -24,7 +24,8 @@ local servers = {
 	"volar",
 	"yamlls",
 	"taplo",
-	"csharp_ls"
+	"csharp_ls",
+	"elixirls"
 }
 
 local settings = {
