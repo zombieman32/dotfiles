@@ -3,18 +3,19 @@
 
 My dotfiles for:
 
-- Fish
-  - Fisher
-- Kitty
-- Starship
-- Neofetch
-- Qutebrowser
-- Thefuck
-- Spotify-tui
+- fish
+  - fisher
+- kitty
+- starship
+- neofetch
+- qutebrowser
+- thefuck
+- spotify-tui
 - mpv
+- wiki-tui
 
 - <details>
-  <summary>Tmux</summary>
+  <summary>tmux</summary>
   
   - tpm
   - tmux-sensible
@@ -32,7 +33,7 @@ My dotfiles for:
   - tmux-spotify
   </details>
 - <details>
-  <summary>Neovim</summary>
+  <summary>neovim</summary>
 
     - packer
   - popup
