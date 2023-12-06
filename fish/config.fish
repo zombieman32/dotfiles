@@ -24,6 +24,15 @@ if type -q exa
   alias lla "ll -a"
 end
 
+# Abbreviations
+abbr --add c clear
+abbr --add ga git add
+abbr --add gcm git commit -m ""
+abbr --add nvim_config nvim ~/.config/nvim/init.lua
+abbr --add install sudo dnf install
+abbr --add rights sudo chmod +x
+abbr --add nfish_config nvim ~/.config/fish/config.fish
+abbr --add overviewer overviewer.py
 # Initialize the starship prompt
 starship init fish | source
 
