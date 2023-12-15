@@ -28,7 +28,8 @@ alias cat "bat"
 # Abbreviations
 abbr --add c clear
 abbr --add ga git add
-abbr --add gcm git commit -m ""
+abbr --add gcm git commit -m
+abbr --add gr git rm --cached
 abbr --add nvim_config nvim ~/.config/nvim/init.lua
 abbr --add install sudo dnf install
 abbr --add remove sudo dnf remove
