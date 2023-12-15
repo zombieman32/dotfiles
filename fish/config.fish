@@ -19,20 +19,32 @@ echo "|__"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____
   echo "|__________________________________________________________|"
 end
 
-if type -q exa
-  alias ll "exa -l -h -g --git --icons"
+if type -q eza
+  alias ll "eza -l -h -U --group-directories-first --no-permissions --no-user --color-scale --git --icons"
   alias lla "ll -a"
 end
 
+alias cat "bat"
 # Abbreviations
 abbr --add c clear
 abbr --add ga git add
 abbr --add gcm git commit -m ""
 abbr --add nvim_config nvim ~/.config/nvim/init.lua
 abbr --add install sudo dnf install
+abbr --add remove sudo dnf remove
 abbr --add rights sudo chmod +x
 abbr --add nfish_config nvim ~/.config/fish/config.fish
-abbr --add overviewer overviewer.py
+abbr --add overviewer ~/Applications/The-Minecraft-Overviewer-1.20.3/overviewer.py
+abbr --add init_mysql sudo systemctl start mysqld
+abbr --add init_mariadb sudo systemctl start mariadb
+abbr --add init_postgre sudo systemctl start postgresql
+abbr --add init_redis sudo systemctl start redis
+abbr --add init_cassandra docker run --name cass_cluster cassandra:latest
+abbr --add init_mongodb sudo systemctl start mongod.service
+abbr --add cassandra docker exec -it cass_cluster cqlsh
+abbr --add dotgrid epiphany ~/Applications/dotgrid-main/index.html
+abbr --add ronin epiphany ~/Applications/ronin-main/index.html
+
 # Initialize the starship prompt
 starship init fish | source
 
@@ -52,3 +64,4 @@ fish_add_path /home/linuxbrew/.linuxbrew/sbin/
 fish_add_path /home/zombie/.spicetify
 fish_add_path /home/zombie/.luaver
 fish_add_path /usr/local/noweb/
+fish_add_path /home/zombie/Applications/uxn
