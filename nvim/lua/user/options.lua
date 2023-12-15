@@ -46,7 +46,7 @@ o.laststatus=2
 vim.g.markdown_composer_autostart = 0
 vim.g.markdown_composer_browser = "epiphany"
 vim.loader.enable()
-o.foldmethod = "marker"
+o.foldmethod = "syntax"
 o.spelllang = "es_mx"
 vim.o.bqn_prefix_key = "."
 
