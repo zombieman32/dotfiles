@@ -35,6 +35,8 @@ require'lspconfig'.gdscript.setup{}
 require("user.linkvisitor")
 require("user.mini")
 require("user.null")
+require("user.nvim-ts-autotag")
+require("user.indent")
 
 vim.api.nvim_set_hl(0, 'NormalMode', {fg = "#89ca78", bold = true})
 vim.api.nvim_set_hl(0, 'InsertMode', {fg = "#61afef", bold = true})
