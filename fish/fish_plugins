@@ -14,3 +14,4 @@ lumakernel/fish-fd-complete
 barnybug/docker-fish-completion
 jorgebucaran/nvm.fish
 shvedes/spicetify-completions
+kidonng/nix-completions.fish
