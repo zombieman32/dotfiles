@@ -66,4 +66,5 @@ fish_add_path /home/zombie/Applications/uxn
 starship init fish | source
 thefuck --alias | source
 source ~/.asdf/asdf.fish
+bass source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 direnv hook fish | source
