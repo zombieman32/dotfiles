@@ -17,7 +17,7 @@ function fish_greeting
 #   echo "|_______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_|"
 #   echo "|________"(set_color green)"\\///"(set_color yellow)"______________"(set_color green)"\\///"(set_color yellow)"__"(set_color green)"\\//////////"(set_color yellow)"__"(set_color green)"\\///"(set_color yellow)"____"(set_color green)"\\///"(set_color yellow)"_|"
 #   echo "|__________________________________________________________|"
-    ponysay -f pinkiepie "Welcome!"
+    printf "  __  _      _    \n / _|(_) ___| |_  \n|  _|| |(_-/|   \ \n|_|  |_|/__/|_||_|" | ponysay -f pinkiepie
 end
 
 if type -q eza
@@ -26,11 +26,14 @@ if type -q eza
 end
 
 alias cat "bat"
+alias gitui "gitui -t mocha.ron"
+
 # Abbreviations
 abbr --add c clear
 abbr --add ga git add
 abbr --add gcm git commit -m
 abbr --add gr git rm --cached
+abbr --add gc git clone
 abbr --add nvim_config nvim ~/.config/nvim/init.lua
 abbr --add install sudo dnf install
 abbr --add remove sudo dnf remove
