@@ -30,6 +30,7 @@ o.tabstop = 4                             -- insert 4 spaces for a tab
 o.cursorline = true                       -- highlight the current line
 o.cursorcolumn = false						-- highlight the current column
 o.relativenumber = true                  -- set relative numbered lines
+o.number = true
 o.numberwidth = 2                         -- set number column width to 2 {default 4}
 o.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line

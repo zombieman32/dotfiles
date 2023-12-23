@@ -2,7 +2,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_use_noswf= 0
-vim.o.number = true                          -- set numbered lines
+vim.g.number = 1
 
 require("user.lazy")
 require("user.options")
@@ -37,9 +37,11 @@ require("user.mini")
 require("user.null")
 require("user.nvim-ts-autotag")
 require("user.indent")
+require("user.catppuccin")
 
-vim.api.nvim_set_hl(0, 'NormalMode', {fg = "#89ca78", bold = true})
-vim.api.nvim_set_hl(0, 'InsertMode', {fg = "#61afef", bold = true})
-vim.api.nvim_set_hl(0, 'ReplaceMode', {fg = "#ef596f", bold = true})
-vim.api.nvim_set_hl(0, 'CommandMode', {fg = "#d55fde", bold = true})
-vim.api.nvim_set_hl(0, 'VisualMode', {fg = "#e5c07b", bold = true})
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+vim.api.nvim_set_hl(0, 'NormalMode', {fg = mocha.blue, bold = true})
+vim.api.nvim_set_hl(0, 'InsertMode', {fg = mocha.green, bold = true})
+vim.api.nvim_set_hl(0, 'ReplaceMode', {fg = mocha.red, bold = true})
+vim.api.nvim_set_hl(0, 'CommandMode', {fg = mocha.peach, bold = true})
+vim.api.nvim_set_hl(0, 'VisualMode', {fg = mocha.mauve, bold = true})

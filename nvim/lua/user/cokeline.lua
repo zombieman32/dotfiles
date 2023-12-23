@@ -3,14 +3,21 @@ if not status_ok then
 	return
 end
 
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
 local switch = {
-	[1] = "#ef596f",
-	[2] = "#d19a66",
-	[3] = "#e5c07b",
-	[4] = "#89ca78",
-	[5] = "#2bbac5",
-	[6] = "#61afef",
-	[0] = "#d55fde",
+	[1] = "#f38ba8",
+	[2] = "#eba0ac",
+	[3] = "#f2cdcd",
+	[4] = "#fab387",
+	[5] = "#f9e2af",
+	[6] = "#a6e3a1",
+	[7] = "#94e2d5",
+	[8] = "#89dceb",
+	[9] = "#74c7ec",
+	[10] = "#89b4fa",
+	[11] = "#b4befe",
+	[0] = "#cba6f7",
 }
 
 cokeline.setup({
@@ -24,10 +31,10 @@ cokeline.setup({
 	},
 	default_hl = {
 		fg = function(buffer)
-			return buffer.is_focused and "#282c34" or "#ABB2BF"
+			return buffer.is_focused and mocha.base or mocha.text
 		end,
 		bg = function(buffer)
-			return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
+			return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or mocha.surface1
 		end,
 	},
 	sidebar = {
@@ -35,8 +42,8 @@ cokeline.setup({
 		components = {
 			{
 				text = "  NvimTree 󰙅",
-				fg = "#8BE9FD",
-				bg = "#282c34",
+				fg = mocha.sapphire,
+				bg = mocha.base,
 				style = "bold",
 			},
 		},
@@ -45,22 +52,22 @@ cokeline.setup({
 	components = {
 		{
 			text = " ",
-			bg = "#282c34",
+			bg = mocha.base,
 		},
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
+				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or mocha.surface1
 			end,
 
-			bg = "#282c34",
+			bg = mocha.base,
 		},
 		{
 			text = function(buffer)
 				return buffer.devicon.icon
 			end,
 			fg = function(buffer)
-				return buffer.is_focused and "#282c34" or buffer.devicon.color
+				return buffer.is_focused and mocha.base or buffer.devicon.color
 			end,
 		},
 		{
@@ -81,9 +88,9 @@ cokeline.setup({
 		{
 			text = "█",
 			fg = function(buffer)
-				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or "#5C6370"
+				return buffer.is_focused and switch[math.fmod(buffer.index, 7)] or mocha.surface1
 			end,
-			bg = "#282c34",
+			bg = mocha.base,
 		},
 	},
 	mappings = {
