@@ -5,19 +5,19 @@ and not set -q TMUX
 end
 
 function fish_greeting 
-#   echo (set_color yellow)"____________________________________________________________"
-#   echo "|__________________________________________________________|"
-#   echo "|_"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____________________"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"________________|"
-#   echo "|_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"///////////"(set_color yellow)"_____________________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_______________|"
-# echo "|__"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"______________"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"______________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"______________|"
-#   echo "|___"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____"(set_color green)"\\///"(set_color yellow)"___"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________|"
-#   echo "|____"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"///////"(set_color yellow)"_______"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"//////"(set_color yellow)"__"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____|"
-#   echo "|_____"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"/////"(set_color cyan)"\\\\\\"(set_color yellow)"___|"
-#   echo "|______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\////////"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__|"
-#   echo "|_______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_|"
-#   echo "|________"(set_color green)"\\///"(set_color yellow)"______________"(set_color green)"\\///"(set_color yellow)"__"(set_color green)"\\//////////"(set_color yellow)"__"(set_color green)"\\///"(set_color yellow)"____"(set_color green)"\\///"(set_color yellow)"_|"
-#   echo "|__________________________________________________________|"
-    printf "  __  _      _    \n / _|(_) ___| |_  \n|  _|| |(_-/|   \ \n|_|  |_|/__/|_||_|" | ponysay -f pinkiepie
+  echo (set_color yellow)"____________________________________________________________"
+  echo "|__________________________________________________________|"
+  echo "|_"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____________________"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"________________|"
+  echo "|_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"///////////"(set_color yellow)"_____________________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_______________|"
+echo "|__"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"______________"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"______________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"______________|"
+  echo "|___"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____"(set_color green)"\\///"(set_color yellow)"___"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________|"
+  echo "|____"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"///////"(set_color yellow)"_______"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"//////"(set_color yellow)"__"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____|"
+  echo "|_____"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color green)"/////"(set_color cyan)"\\\\\\"(set_color yellow)"___|"
+  echo "|______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\////////"(set_color cyan)"\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__|"
+  echo "|_______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_|"
+  echo "|________"(set_color green)"\\///"(set_color yellow)"______________"(set_color green)"\\///"(set_color yellow)"__"(set_color green)"\\//////////"(set_color yellow)"__"(set_color green)"\\///"(set_color yellow)"____"(set_color green)"\\///"(set_color yellow)"_|"
+  echo "|__________________________________________________________|"
+    # printf "  __  _      _    \n / _|(_) ___| |_  \n|  _|| |(_-/|   \ \n|_|  |_|/__/|_||_|" | ponysay -f pinkiepie
 end
 
 if type -q eza
