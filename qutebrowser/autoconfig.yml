@@ -11,7 +11,7 @@ settings:
   colors.webpage.darkmode.enabled:
     global: false
   completion.timestamp_format:
-    global: '%d-%m-%Y %H:%M'
+    global: "%d-%m-%Y %H:%M"
   content.autoplay:
     global: false
   content.blocking.method:
@@ -30,9 +30,9 @@ settings:
     global: true
   spellcheck.languages:
     global:
-    - en-US
-    - es-ES
-    - it-IT
+      - en-US
+      - es-ES
+      - it-IT
   tabs.last_close:
     global: close
   tabs.position:
@@ -40,7 +40,7 @@ settings:
   tabs.show:
     global: switching
   tabs.title.format:
-    global: '{audio}☆{index}☆{current_title}'
+    global: "{audio}☆{index}☆{current_title}"
   tabs.title.format_pinned:
     global: ♡{index}♡
   tabs.wrap:
@@ -51,7 +51,7 @@ settings:
       az: https://search.azlyrics.com/search.php?q={}
       chord: https://jguitar.com/chordsearch?chordsearch={}
       cifra: https://www.cifraclub.com/?q={}
-      github: https://github.com/search?q={}
+      gh: https://github.com/search?q={}
       lc: https://acordes.lacuerda.net/busca.php?exp={}
       letras: https://www.letras.com/?q={}
       mc: https://minecraft.fandom.com/wiki/Special:Search?query={}
@@ -62,6 +62,19 @@ settings:
       ug: https://www.ultimate-guitar.com/search.php?search_type=title&value={}
       wiki: https://es.wikipedia.org/w/index.php?search={}
       yt: https://youtube.com/results?search_query={}
+      devdocs: https://devdocs.io/#q={}
+      fedpkgs: https://packages.fedoraproject.org/search?query={}
+      drive: https://drive.google.com/drive/search?q={}
+      maps: https://www.google.com.ar/maps/search/{}?hl=es&source=opensearch
+      medium: https://medium.com/search?q={}&ref=opensearch
+      mods: https://modrinth.com/mods?q={}
+      msxm: https://community.musixmatch.com/search/{}?utm_source=opensearch
+      netboot: https://netboot.xyz/search?q={}
+      osu: https://osu.ppy.sh/home/search?query={}
+      pdb: https://www.protondb.com/search?q={}
+      sdb: https://steamdb.info/search/?a=all&q={}
+      tboi: https://bindingofisaacrebirth.fandom.com/wiki/Special:Search?query={}
+      yts: https://yts.mx/browse-movies/{}/all/all/0/latest/0/all
   window.hide_decoration:
     global: false
   window.transparent:
