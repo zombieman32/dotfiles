@@ -8,22 +8,36 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  colors.tabs.pinned.selected.odd.bg:
+    global: black
   colors.webpage.darkmode.enabled:
-    global: false
+    global: true
+  colors.webpage.darkmode.increase_text_contrast:
+    global: true
+  colors.webpage.preferred_color_scheme:
+    global: dark
   completion.timestamp_format:
     global: '%d-%m-%Y %H:%M'
   content.autoplay:
     global: false
   content.blocking.method:
-    global: both
+    global: auto
   content.cookies.accept:
     global: no-3rdparty
   content.notifications.enabled:
     https://www.youtube.com: false
   content.plugins:
     global: true
+  downloads.location.directory:
+    global: /hdd/Descargas
+  downloads.location.prompt:
+    global: false
   downloads.position:
     global: bottom
+  downloads.remove_finished:
+    global: 10
+  fonts.debug_console:
+    global: default_size default_family
   fonts.tabs.selected:
     global: default_size default_family
   scrolling.smooth:
@@ -44,9 +58,9 @@ settings:
   tabs.show:
     global: multiple
   tabs.title.format:
-    global: '{audio}☆{index}☆{current_title}'
+    global: '{index} |{current_title}|{audio}|'
   tabs.title.format_pinned:
-    global: ♡{audio} {index} ♡
+    global: '{audio}'
   tabs.wrap:
     global: true
   url.searchengines:
