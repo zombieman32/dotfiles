@@ -1,7 +1,7 @@
 local vim = vim
 local o = vim.opt
 
-o.compatible = false						-- no vi compatibility
+o.compatible = false                      -- no vi compatibility
 o.backup = false                          -- creates a backup file
 o.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 o.cmdheight = 2                           -- more space in the neovim command line for displaying messages
@@ -28,13 +28,13 @@ o.expandtab = true                        -- convert tabs to spaces
 o.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 o.tabstop = 4                             -- insert 4 spaces for a tab
 o.cursorline = true                       -- highlight the current line
-o.cursorcolumn = false						-- highlight the current column
-o.relativenumber = true                  -- set relative numbered lines
+o.cursorcolumn = false                    -- highlight the current column
+o.relativenumber = true                   -- set relative numbered lines
 o.number = true
 o.numberwidth = 2                         -- set number column width to 2 {default 4}
 o.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line
-o.scrolloff = 10                           -- is one of my fav
+o.scrolloff = 10                          -- is one of my fav
 o.sidescrolloff = 8
 o.guifont = "FiraCode-Regular"                    -- the font used in graphical neovim applications
 o.showmode = true
@@ -59,3 +59,5 @@ vim.cmd "filetype indent on"
 vim.cmd "hi CursorLine cterm=NONE ctermbg=242"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+vim.cmd [[set listchars=eol:󰌑,tab:··,trail:~,extends:>,precedes:<]]
+vim.cmd [[set list]]
