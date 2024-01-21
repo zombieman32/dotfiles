@@ -1,1 +1,2 @@
 include catppuccin-mocha
+map <C-o> feedkeys ":exec zathura $FILE<Return>"
