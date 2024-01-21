@@ -52,7 +52,7 @@ return packer.startup(function(use)
 		config = function()
 			require("alpha").setup(require("alpha.themes.dashboard").config)
 		end,
-	}) -- Start screen
+	})                      -- Start screen
 	use("lewis6991/gitsigns.nvim") -- Git symbols
 	use({
 		"willothy/nvim-cokeline",
@@ -68,26 +68,14 @@ return packer.startup(function(use)
 		config = function()
 			require("persistence").setup()
 		end,
-	}) -- Session manager
+	})                           -- Session manager
 	use("kyazdani42/nvim-web-devicons") -- Icons
 	use("moll/vim-bbye")
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use("tamton-aquib/staline.nvim") -- Status line and buffer line
-	use("junegunn/rainbow_parentheses.vim") -- Color pairs of brackets
 	use("norcalli/nvim-colorizer.lua") -- Color codes preview
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			opts = {}
-			-- Other blankline configuration here
-			require("ibl").setup(require("indent-rainbowline").make_opts(opts, {
-				colors = { 0xf38ba8, 0xfab387, 0xf9e2af, 0xa6e3a1, 0x89dceb, 0x89b4fa, 0xcba6f7 },
-			}))
-		end,
-		requires = {
-			"TheGLander/indent-rainbowline.nvim",
-		},
-	})
+	use "lukas-reineke/indent-blankline.nvim"
+	use "HiPhish/rainbow-delimiters.nvim"
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" }) -- File Tree
 	use("euclio/vim-markdown-composer")
 
@@ -104,22 +92,22 @@ return packer.startup(function(use)
 
 	-- CMP
 	use("hrsh7th/cmp-buffer") -- CMP buffer
-	use("hrsh7th/cmp-path") -- CMP paths
+	use("hrsh7th/cmp-path")  -- CMP paths
 	use("hrsh7th/cmp-cmdline") -- CMP completions
-	use("hrsh7th/nvim-cmp") -- CMP main plugin
+	use("hrsh7th/nvim-cmp")  -- CMP main plugin
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
+	use("L3MON4D3/LuaSnip")      --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/mason.nvim") -- simple to use language server installer
+	use("neovim/nvim-lspconfig")      -- enable LSP
+	use("williamboman/mason.nvim")    -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
-	use("nvimtools/none-ls.nvim") -- LSP diagnostics and code actions
+	use("nvimtools/none-ls.nvim")     -- LSP diagnostics and code actions
 
 	-- Misc
 	use("andweeb/presence.nvim") -- Discord integration
@@ -206,7 +194,6 @@ return packer.startup(function(use)
 		after = "nvim-treesitter",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
-	use("p00f/nvim-ts-rainbow")
 
 	-- Tmux integration
 	use("christoomey/vim-tmux-navigator")
@@ -214,7 +201,7 @@ return packer.startup(function(use)
 	-- Mason installer utility to ensure installed LSP's
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- Configs for DAP
-	use("jay-babu/mason-nvim-dap.nvim") -- Better integration for Mason and nvim-dap
+	use("jay-babu/mason-nvim-dap.nvim")                              -- Better integration for Mason and nvim-dap
 	use("jay-babu/mason-null-ls.nvim")
 
 	use("mbbill/undotree")
@@ -296,8 +283,8 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	use("habamax/vim-godot") -- Godot integration
-	use("uga-rosa/ccc.nvim") -- Color picker
+	use("habamax/vim-godot")           -- Godot integration
+	use("uga-rosa/ccc.nvim")           -- Color picker
 	use("https://git.sr.ht/~detegr/nvim-bqn") -- BQN utilities
 	use("xiyaowong/link-visitor.nvim") -- Visit links in a file
 	use({
@@ -315,7 +302,7 @@ return packer.startup(function(use)
 			"MunifTanjim/nui.nvim",
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
-	}) -- File tree
+	})                    -- File tree
 	use("rebelot/heirline.nvim") -- Status, window and tabline
 	use({
 		"nvim-neorg/neorg",
@@ -376,8 +363,23 @@ return packer.startup(function(use)
 			},
 		}),
 	})
+	use({
+		"anuvyklack/pretty-fold.nvim",
+		config = function()
+			require("pretty-fold").setup()
+		end,
+	})
 	use("bellinitte/uxntal.vim")
 	use("windwp/nvim-ts-autotag")
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
