@@ -21,8 +21,10 @@ echo "|__"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____
 end
 
 if type -q eza
-  alias ll "eza -l -h -U --group-directories-first --no-permissions --no-user --color-scale --git --icons"
+  alias ll "eza -l -h -U --group-directories-first --no-user --color-scale --git --icons"
+  alias lln "eza -l -h -U --group-directories-first --no-permissions --no-user --color-scale --git --icons"
   alias lla "ll -a"
+  alias llan "lln -a"
 end
 
 alias cat "bat"
@@ -50,6 +52,7 @@ abbr --add init_mongodb sudo systemctl start mongod.service
 abbr --add cassandra docker exec -it cass_cluster cqlsh
 abbr --add dotgrid epiphany ~/Applications/dotgrid-main/index.html
 abbr --add ronin epiphany ~/Applications/ronin-main/index.html
+abbr --add resume_dld wget -cresume_dld wget -c
 
 set --export STEAM_LIBRARY /hdd/SteamLibrary
 fish_add_path /home/zombie/.bun/bin/
