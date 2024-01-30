@@ -304,41 +304,6 @@ return packer.startup(function(use)
 		},
 	})                    -- File tree
 	use("rebelot/heirline.nvim") -- Status, window and tabline
-	use({
-		"nvim-neorg/neorg",
-		after = { "nvim-treesitter", "telescope.nvim" },
-		config = function()
-			require("neorg").setup({
-				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
-					["core.dirman"] = { -- Manages Neorg workspaces
-						config = {
-							workspaces = {
-								notes = "/hdd/Documentos/neorg/notes/",
-							},
-						},
-					},
-					["core.completion"] = {
-						config = {
-							engine = "nvim-cmp",
-						},
-					},
-					["core.export.markdown"] = {},
-					["core.presenter"] = {
-						config = {
-							zen_mode = "zen-mode",
-						},
-					},
-					["core.integrations.nvim-cmp"] = {},
-					["core.integrations.treesitter"] = {},
-					["core.integrations.zen_mode"] = {},
-				},
-			})
-		end,
-		run = ":Neorg sync-parsers",
-		requires = "nvim-lua/plenary.nvim",
-	})
 	use("folke/twilight.nvim") -- Dim parts of the code you're not working on
 	use({
 		"folke/zen-mode.nvim",
