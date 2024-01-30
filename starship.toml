@@ -10,7 +10,7 @@ $directory $package $git_branch $git_commit $git_metrics
 right_format ="""$all""" 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
- 
+
 command_timeout = 1000
 
 palette = 'catppuccin_mocha'
