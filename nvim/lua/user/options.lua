@@ -59,5 +59,5 @@ vim.cmd "filetype indent on"
 vim.cmd "hi CursorLine cterm=NONE ctermbg=242"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set listchars=eol:󰌑,tab:··,trail:~,extends:>,precedes:<]]
+vim.cmd [[set listchars=eol:󰌑,tab:\|·,trail:~,extends:>,precedes:<]]
 vim.cmd [[set list]]
