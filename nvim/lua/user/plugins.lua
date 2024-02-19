@@ -345,6 +345,8 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+	use("jvgrootveld/telescope-zoxide")
+	use("nanotee/zoxide.vim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
