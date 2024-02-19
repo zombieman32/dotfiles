@@ -3,7 +3,7 @@
 
 # Use custom format
 format = '''
-[->>](sapphire) $sudo$username $os $time
+[->>](sapphire) $sudo$username $os
 $directory $package $git_branch $git_commit $git_metrics
 [~~>](blue ) '''
 
@@ -44,12 +44,6 @@ Arch = "󰣇"
 Manjaro = "󱘊 "
 Pop = ""
 Debian = "󰣚"
-
-[time]
-disabled = false
-format = "[ $time]($style) "
-time_format = "%k:%M"
-style = "bold sapphire"
 
 [directory]
 style = 'italic mauve'
