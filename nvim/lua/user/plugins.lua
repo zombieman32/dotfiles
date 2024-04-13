@@ -221,7 +221,11 @@ return packer.startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-			require("octo").setup()
+			require("octo").setup({
+				suppress_missing_scope = {
+					projects_v2 = true,
+				}
+			})
 		end,
 	})
 
@@ -328,12 +332,7 @@ return packer.startup(function(use)
 			},
 		}),
 	})
-	use({
-		"anuvyklack/pretty-fold.nvim",
-		config = function()
-			require("pretty-fold").setup()
-		end,
-	})
+	use("anuvyklack/pretty-fold.nvim")
 	use("bellinitte/uxntal.vim")
 	use("windwp/nvim-ts-autotag")
 	use({
