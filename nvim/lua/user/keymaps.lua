@@ -19,12 +19,9 @@ vim.g.maplocalleader = ","
 -- Normal --
 
 -- Better window navigation
-wk.register({
-	["<S>"] = {
-		name = "navigation",
-		o = {"<cmd>:only<CR>", "Close all but current buffers"} ,
-	}
-})
+keymap("n", "k", "kzz", opts)
+keymap("n", "j", "jzz", opts)
+keymap("n", "Q", ":q<CR>", opts)
 
 keymap("n", "<C-Left>", "<C-w>h", opts)
 keymap("n", "<C-Down>", "<C-w>j", opts)
@@ -79,9 +76,6 @@ keymap("n", "<A-Down>", ":resize -2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
--- Insert --
--- Press hj fast to enter
-keymap("i", "hj", "<ESC>", opts)
 
 -- [Visual] --
 keymap("v", "ff", "$", opts)
