@@ -67,7 +67,7 @@ abbr --add init_mongodb sudo systemctl start mongod.service
 abbr --add cassandra docker exec -it cass_cluster cqlsh
 abbr --add dotgrid epiphany ~/Applications/dotgrid-main/index.html
 abbr --add ronin epiphany ~/Applications/ronin-main/index.html
-abbr --add resume_dld wget -cresume_dld wget -c
+abbr --add download wget -c 
 
 set --export STEAM_LIBRARY /hdd/SteamLibrary
 set --export BW_SESSION VcmjeOR0C2eCMCpCHlKxu/v+CSR53bUdbEMiqzwcpFABPD8zhZB52o1CIuagfpJxxGVd86Hc3DVTkTR8YLMjfQ==
@@ -77,6 +77,7 @@ fish_add_path /home/zombie/.cargo/bin/
 fish_add_path /home/zombie/.cabal/bin/
 fish_add_path /home/zombie/.ghcup/bin/
 fish_add_path /home/zombie/.local/bin/
+fish_add_path /home/zombie/go/bin/
 fish_add_path /home/linuxbrew/.linuxbrew/bin/
 fish_add_path /home/linuxbrew/.linuxbrew/sbin/
 fish_add_path /home/zombie/.spicetify
