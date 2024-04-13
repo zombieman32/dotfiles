@@ -49,7 +49,7 @@ vim.g.markdown_composer_browser = "epiphany"
 vim.loader.enable()
 o.foldmethod = "syntax"
 o.spelllang = "es_mx"
-vim.o.bqn_prefix_key = "."
+-- vim.o.bqn_prefix_key = "."
 
 o.shortmess:append "c"
 
