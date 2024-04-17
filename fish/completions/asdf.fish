@@ -1,0 +1,1 @@
+/home/zombie/.asdf/completions/asdf.fish

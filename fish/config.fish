@@ -10,7 +10,8 @@ and not set -q TMUX
     exec tmux
 end
 
-function fish_greeting 
+function fish_greeting
+  clear
   # echo (set_color yellow)"____________________________________________________________"
   # echo "|__________________________________________________________|"
   # echo "|_"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_____________________"(set_color green)"/"(set_color cyan)"\\\\\\"(set_color yellow)"________________|"
@@ -23,7 +24,9 @@ function fish_greeting
   # echo "|_______"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_____________"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"__"(set_color green)"/"(set_color cyan)"\\\\\\\\\\\\\\\\\\\\"(set_color yellow)"_"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"___"(set_color green)"\\/"(set_color cyan)"\\\\\\"(set_color yellow)"_|"
   # echo "|________"(set_color green)"\\///"(set_color yellow)"______________"(set_color green)"\\///"(set_color yellow)"__"(set_color green)"\\//////////"(set_color yellow)"__"(set_color green)"\\///"(set_color yellow)"____"(set_color green)"\\///"(set_color yellow)"_|"
   # echo "|__________________________________________________________|"
-  printf "  __  _      _    \n / _|(_) ___| |_  \n|  _|| |(_-/|   \ \n|_|  |_|/__/|_||_|" | ponysay -f pinkiepie
+  printf "  __  _      _    \n / _|(_) ___| |_  \n|  _|| |(_-/|   \ \n|_|  |_|/__/|_||_|" | ponysay
+  sleep 1.5
+  clear
 end
 
 function ya
@@ -96,3 +99,11 @@ bass source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 direnv hook fish | source
 eval (tmuxifier init - fish)
 zoxide init --cmd cd fish | source
+
+# argc-completions
+set -gx ARGC_COMPLETIONS_ROOT "/home/zombie/Development/argc-completions"
+set -gx ARGC_COMPLETIONS_PATH "$ARGC_COMPLETIONS_ROOT/completions"
+fish_add_path "$ARGC_COMPLETIONS_ROOT/bin"
+# To add completions for only the specified command, modify next line e.g. set argc_scripts cargo git
+set argc_scripts (ls -1 "$ARGC_COMPLETIONS_ROOT/completions" | sed -n 's/\.sh$//p')
+argc --argc-completions fish $argc_scripts | source
