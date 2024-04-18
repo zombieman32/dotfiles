@@ -1,5 +1,4 @@
-require("mason-null-ls").setup({
-	ensure_installed = {
+local servers = {
 	"prettier",
 	"black",
 	"stylua",
@@ -13,7 +12,6 @@ require("mason-null-ls").setup({
 	"buildifier",
 	"fourmolu",
 	"shfmt",
-	"stylua",
 	"csharpier",
 	"gdtoolkit",
 	"flake8",
@@ -25,12 +23,17 @@ require("mason-null-ls").setup({
 	"selene",
 	"sqlfluff",
 	"stylelint",
-	"buildifier",
 	"curlylint",
 	"vint",
 	"yamllint",
-	"trivy"
-	},
-	automatic_installation = false,
+	"trivy",
+	"checkmake",
+	"codespell",
+	"proselint"
+	}
+
+require("mason-null-ls").setup({
+	ensure_installed = servers,
+	automatic_installation = true,
 	handlers = {},
 })
