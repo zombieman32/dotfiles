@@ -39,8 +39,8 @@ function ya
 end
 
 if type -q eza
-  alias ll "eza -l -h -U --group-directories-first --no-user --color-scale --git --icons"
-  alias lln "eza -l -h -U --group-directories-first --no-permissions --no-user --color-scale --git --icons"
+  alias ll "eza -l -h --group-directories-first --no-user --git --icons"
+  alias lln "eza -l -h --group-directories-first --no-permissions --no-user --git --icons"
   alias lla "ll -a"
   alias llan "lln -a"
 end
