@@ -2,7 +2,7 @@ scripte utf-8
 let b:keymap_name=expand('<sfile>:t:r')
 
 " Configurable prefix key; backslash by default
-let p=exists('g:bqn_prefix_key')?g:bqn_prefix_key:'\'
+let p=exists('g:bqn_prefix_key')?g:bqn_prefix_key:'.'
 
 let a ='`1234567890-= ~!@#$%^&*()_+'
 let a.='qwertyuiop[]  QWERTYUIOP{} '
