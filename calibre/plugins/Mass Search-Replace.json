@@ -1,0 +1,7 @@
+{
+  "ErrorStrategy": {
+    "Operation": "ask",
+    "Update": "interrupt"
+  },
+  "Quick": []
+}
