@@ -1,6 +1,7 @@
 local vim = vim
 local o = vim.opt
 
+o.autochdir = true
 o.compatible = false                      -- no vi compatibility
 o.backup = false                          -- creates a backup file
 o.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
@@ -49,7 +50,6 @@ vim.g.markdown_composer_browser = "epiphany"
 vim.loader.enable()
 o.foldmethod = "syntax"
 o.spelllang = "es_mx"
--- vim.o.bqn_prefix_key = "."
 
 o.shortmess:append "c"
 
