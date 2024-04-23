@@ -7,3 +7,4 @@ set selection-clipboard clipboard
 set guioptions none
 include catppuccin-mocha
 map <C-o> feedkeys ":exec zathura $FILE<Return>"
+map w set recolor true
