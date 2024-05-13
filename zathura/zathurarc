@@ -5,6 +5,7 @@ set page-padding 1
 map b toggle_statusbar
 set selection-clipboard clipboard
 set guioptions none
+set synctex true
 include catppuccin-mocha
 map <C-o> feedkeys ":exec zathura $FILE<Return>"
 map w set recolor true
