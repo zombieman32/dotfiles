@@ -70,7 +70,7 @@ abbr --add init_mongodb sudo systemctl start mongod.service
 abbr --add cassandra docker exec -it cass_cluster cqlsh
 abbr --add dotgrid epiphany ~/Applications/dotgrid-main/index.html
 abbr --add ronin epiphany ~/Applications/ronin-main/index.html
-abbr --add download wget -c 
+abbr --add dl wget -c 
 
 set --export STEAM_LIBRARY /hdd/SteamLibrary
 set --export BW_SESSION VcmjeOR0C2eCMCpCHlKxu/v+CSR53bUdbEMiqzwcpFABPD8zhZB52o1CIuagfpJxxGVd86Hc3DVTkTR8YLMjfQ==
