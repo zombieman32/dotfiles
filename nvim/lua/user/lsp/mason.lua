@@ -14,7 +14,7 @@ local servers = {
     'jdtls',
     'kotlin_language_server',
     'ltex',
-    'ruby_ls',
+    'ruby_lsp',
     'rust_analyzer',
     'sqlls',
     'emmet_ls',
