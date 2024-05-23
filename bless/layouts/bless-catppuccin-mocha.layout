@@ -41,8 +41,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </evenrow>
         <oddrow>
@@ -55,8 +55,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </oddrow>
     </display>
@@ -87,8 +87,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </evenrow>
         <oddrow>
@@ -101,8 +101,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </oddrow>
     </display>
@@ -132,8 +132,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </evenrow>
         <oddrow>
@@ -146,8 +146,8 @@
 		        <background>#1e1e2e</background>
             </oddcolumn>
             <selectedcolumn>
-		        <foreground>#cdd6f4</foreground>
-		        <background>#11111b</background>
+		        <foreground>#11111b</foreground>
+		        <background>#b4befe</background>
             </selectedcolumn>
         </oddrow>
     </display>
