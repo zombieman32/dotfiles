@@ -2,7 +2,6 @@ local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-local wk = require("which-key")
 
 --Remap space as leader key
 vim.g.mapleader = ","
@@ -90,10 +89,9 @@ keymap(
 )
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
--- ToggleTerm --
-keymap("n", "<A-Enter>", "<Cmd>ToggleTerm<CR>", opts)
 
 keymap("n", "<F5>", "<Cmd>UndotreeToggle<CR>", opts)
+keymap("n", "<leader>L", "<Cmd>Lazy<CR>", opts)
 
 if vim.bo.filetype == "tidal" then
 	keymap("i", "billybd", "[t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~]", opts)
