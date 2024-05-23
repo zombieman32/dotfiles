@@ -145,14 +145,13 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         dependencies = {
-            {
-                'lukas-reineke/headlines.nvim',
-                config = function()
-                    require('headlines').setup()
-                end,
-            },
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
+    },
+    {
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true, -- or `opts = {}`
     },
 
     -- Tmux integration
