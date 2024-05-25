@@ -20,47 +20,19 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('user.plugins', {
-    defaults = {
-        lazy = true,
-    },
+require('lazy').setup('plugins', {
     ui = {
         border = 'rounded',
     },
 })
-require('user.options')
-require('user.keymaps')
-require('user.colorscheme')
-require('user.nvimtree')
-require('user.cmp')
-require('user.lsp')
-require('user.cokeline')
-require('user.lualine')
-require('user.telescope')
-require('user.image')
-require('user.treesitter')
-require('user.autopairs')
-require('user.gitsigns')
-require('user.alpha')
-require('user.biscuits')
-require('user.toggleterm')
-require('user.masonti')
-require('user.multicursor')
-require('user.codeshot')
-require('user.regs')
-require('user.whichkey')
-require('user.autocmd')
-require('user.bqnlsp')
-require('user.bqnparser')
-require('lspconfig').gdscript.setup({})
-require('user.linkvisitor')
-require('user.mini')
-require('user.null')
-require('user.nvim-ts-autotag')
-require('user.indent')
-require('user.catppuccin')
-require('user.octo')
-require('user.pretty-fold')
+
+require('options')
+require('keymaps')
+--require('lsp.handlers')
+require('autocmd')
+--require('bqnlsp')
+--require('bqnparser')
+--require('lspconfig').gdscript.setup({})
 
 local mocha = require('catppuccin.palettes').get_palette('mocha')
 vim.api.nvim_set_hl(0, 'NormalMode', { fg = mocha.blue, bold = true })
