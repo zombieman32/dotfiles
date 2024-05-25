@@ -282,17 +282,10 @@ return {
                 -- add operators that will trigger motion and text object completion
                 -- to enable all native operators, set the preset / operators plugin above
                 -- operators = { gc = "Comments" },
-                key_labels = {
-                    -- override the label used to display some keys. It doesn't effect WK in any other way.
-                    -- For example:
-                    -- ["<space>"] = "SPC",
-                    -- ["<cr>"] = "RET",
-                    -- ["<tab>"] = "TAB",
-                },
                 icons = {
                     breadcrumb = '»', -- symbol used in the command line area that shows your active key combo
-                    separator = '➜', -- symbol used between a key and it's label
-                    group = '+', -- symbol prepended to a group
+                    separator = '', -- symbol used between a key and it's label
+                    group = '󰜌', -- symbol prepended to a group
                 },
                 popup_mappings = {
                     scroll_down = '<c-d>', -- binding to scroll down inside the popup
@@ -335,6 +328,7 @@ return {
             }
 
             local mappings = {
+                ['L'] = { '<cmd>Lazy<cr>', 'Lazy' },
                 ['a'] = { '<cmd>Alpha<cr>', 'Alpha' },
                 ['b'] = {
                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -416,18 +410,6 @@ return {
                     R = { '<cmd>Telescope registers<cr>', 'Registers' },
                     k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
                     C = { '<cmd>Telescope commands<cr>', 'Commands' },
-                },
-
-                t = {
-                    name = 'Terminal',
-                    n = { '<cmd>lua _NODE_TOGGLE()<cr>', 'Node' },
-                    u = { '<cmd>lua _NCDU_TOGGLE()<cr>', 'NCDU' },
-                    t = { '<cmd>lua _HTOP_TOGGLE()<cr>', 'Htop' },
-                    p = { '<cmd>lua _PYTHON_TOGGLE()<cr>', 'Python' },
-                },
-
-                L = {
-                    name = 'Lazy',
                 },
             }
 
