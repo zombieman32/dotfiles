@@ -64,7 +64,7 @@ return {
             -- ignore. Feel free to remove this line after you've gotten Modicator to
             -- work properly.
             show_warnings = true,
-        },
+        }
     },
 
     -- Better UI

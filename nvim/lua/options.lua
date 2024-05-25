@@ -1,5 +1,16 @@
 local vim = vim
+local api = vim.api
 local o = vim.opt
+local g = vim.g
+local cmd = vim.cmd
+
+local mocha = require('catppuccin.palettes').get_palette('mocha')
+
+api.nvim_set_hl(0, 'NormalMode', { fg = mocha.blue, bold = true })
+api.nvim_set_hl(0, 'InsertMode', { fg = mocha.green, bold = true })
+api.nvim_set_hl(0, 'ReplaceMode', { fg = mocha.red, bold = true })
+api.nvim_set_hl(0, 'CommandMode', { fg = mocha.peach, bold = true })
+api.nvim_set_hl(0, 'VisualMode', { fg = mocha.mauve, bold = true })
 
 o.autochdir = true
 o.compatible = false -- no vi compatibility
@@ -45,20 +56,20 @@ o.showmatch = true
 o.history = 1000
 o.wildmenu = true
 o.laststatus = 2
-vim.g.markdown_composer_autostart = 0
-vim.g.markdown_composer_browser = 'epiphany'
+g.markdown_composer_autostart = 0
+g.markdown_composer_browser = 'epiphany'
 vim.loader.enable()
 o.foldmethod = 'syntax'
 o.spelllang = 'es_mx'
 
 o.shortmess:append('c')
 
-vim.cmd('filetype on')
-vim.cmd('filetype plugin on')
-vim.cmd('filetype indent on')
-vim.cmd('hi CursorLine cterm=NONE ctermbg=242')
-vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set listchars=eol:󰌑,tab:\|·,trail:~,extends:>,precedes:<]])
-vim.cmd([[set list]])
-vim.cmd.colorscheme('catppuccin')
+cmd('filetype on')
+cmd('filetype plugin on')
+cmd('filetype indent on')
+cmd('hi CursorLine cterm=NONE ctermbg=242')
+cmd('set whichwrap+=<,>,[,],h,l')
+cmd([[set iskeyword+=-]])
+cmd([[set listchars=eol:󰌑,tab:\|·,trail:~,extends:>,precedes:<]])
+cmd([[set list]])
+cmd.colorscheme('catppuccin')
