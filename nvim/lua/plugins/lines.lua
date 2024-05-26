@@ -2,7 +2,7 @@ return {
     -- Statusline
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+        dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
         config = function()
             local lualine = require('lualine')
 
@@ -173,7 +173,7 @@ return {
             lualine.setup({
                 options = {
                     icons_enabled = true,
-                    theme = 'catppuccin-mocha',
+                    theme = 'catppuccin',
                     component_separators = { left = ')', right = '(' },
                     section_separators = { left = '', right = '' },
                     disabled_filetypes = { 'dashboard', 'NvimTree', 'Outline' },
@@ -197,7 +197,14 @@ return {
                     lualine_z = {},
                 },
                 tabline = {},
-                extensions = {},
+                extensions = {
+                    'fzf',
+                    'nvim-dap-ui',
+                    'oil',
+                    'lazy',
+                    'mason',
+                    'nvim-tree'
+                },
             })
         end,
     },
@@ -218,7 +225,7 @@ return {
         'willothy/nvim-cokeline',
         dependencies = {
             'nvim-lua/plenary.nvim', -- Required for v0.4.0+
-            'kyazdani42/nvim-web-devicons', -- If you want devicons
+            'nvim-tree/nvim-web-devicons', -- If you want devicons
         },
         config = function()
             local cokeline = require('cokeline')

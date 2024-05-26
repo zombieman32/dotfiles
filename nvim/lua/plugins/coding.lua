@@ -3,7 +3,7 @@ return {
     -- Snippet engine
     'L3MON4D3/LuaSnip',
 
-     -- a bunch of snippets to use
+    -- a bunch of snippets to use
     'rafamadriz/friendly-snippets',
 
     -- Clojure

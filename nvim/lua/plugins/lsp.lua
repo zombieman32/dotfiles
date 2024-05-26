@@ -1,221 +1,233 @@
--- TODO: fix lsp
---return {
---	{
---		"neovim/nvim-lspconfig",
---		dependencies = {
---			{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
---			{ "folke/neodev.nvim", opts = {} },
---			"mason.nvim",
---			"williamboman/mason-lspconfig.nvim",
---		},
---	}, -- enable LSP
---	{
---		"williamboman/mason.nvim",
---		config = function()
---			local settings = {
---				ui = {
---					border = "rounded",
---					icons = {
---						package_installed = "",
---						package_pending = "",
---						package_uninstalled = "",
---					},
---				},
---				log_level = vim.log.levels.INFO,
---				max_concurrent_installers = 4,
---			}
---
---			require("mason").setup(settings)
---		end,
---	}, -- simple to use language server installer
---	{
---		"williamboman/mason-lspconfig.nvim",
---		config = function()
---			local ensure_installed = {
---				"lua_ls",
---				"cssls",
---				"html",
---				"tsserver",
---				"pyright",
---				"jsonls",
---				"angularls",
---				"asm_lsp",
---				"clangd",
---				"clojure_lsp",
---				"dockerls",
---				"hls",
---				"jdtls",
---				"kotlin_language_server",
---				"ltex",
---				"ruby_lsp",
---				"rust_analyzer",
---				"sqlls",
---				"emmet_ls",
---				"graphql",
---				"svelte",
---				"terraformls",
---				"volar",
---				"yamlls",
---				"taplo",
---				"csharp_ls",
---				"elixirls",
---			}
---
---			require("mason-lspconfig").setup({
---				automatic_installation = true,
---			})
---
---			local lspconfig = require("lspconfig")
---			local opts = {}
---
---			for _, server in pairs(ensure_installed) do
---				opts = {
---					on_attach = require("lsp.handlers").on_attach,
---					capabilities = require("lsp.handlers").capabilities,
---				}
---
---				server = vim.split(server, "@")[1]
---
---				local require_ok, conf_opts = pcall(require, "lsp.settings." .. server)
---				if require_ok then
---					opts = vim.tbl_deep_extend("force", conf_opts, opts)
---				end
---
---				lspconfig[server].setup(opts)
---			end
---		end,
---	}, -- simple to use language server installer
---	{
---		"nvimtools/none-ls.nvim",
---		config = function()
---			local none_ls = require("none-ls")
---			local code_actions = none_ls.builtins.code_actions
---			local diagnostics = none_ls.builtins.diagnostics
---			local formatting = none_ls.builtins.formatting
---			local hover = none_ls.builtins.hover
---			local completion = none_ls.builtins.completion
---
---			local sources = {
---				completion.spell,
---				completion.tags,
---				code_actions.ts_node_action,
---				diagnostics.actionlint,
---				diagnostics.alex,
---				diagnostics.cppcheck,
---				diagnostics.deadnix,
---				diagnostics.fish,
---				diagnostics.gitlint,
---				diagnostics.reek,
---				diagnostics.statix,
---				diagnostics.terraform_validate,
---				diagnostics.tfsec,
---				diagnostics.todo_comments,
---				diagnostics.trail_space,
---				formatting.alejandra,
---				hover.dictionary,
---				hover.printenv,
---				none_ls.builtins.formatting.stylua.with({
---					extra_args = {
---						"--config-path",
---						vim.fn.expand("~/.config/nvim/lua/plugins/lsp/settings/stylua.toml"),
---					},
---				}),
---			}
---
---			none_ls.setup({
---				debug = false,
---				sources = sources,
---				diagnostics_format = "#{s} | #{m}",
---			})
---		end,
---	}, -- LSP diagnostics and code actions
---	{
---		"WhoIsSethDaniel/mason-tool-installer.nvim",
---		config = function()
---			require("mason-tool-installer").setup({
---				ensure_installed = {
---					"lua_ls",
---					"cssls",
---					"html",
---					"tsserver",
---					"pyright",
---					"jsonls",
---					"angularls",
---					"asm_lsp",
---					"clangd",
---					"clojure_lsp",
---					"dockerls",
---					"hls",
---					"jdtls",
---					"kotlin_language_server",
---					"ltex",
---					"ruby_lsp",
---					"rust_analyzer",
---					"sqlls",
---					"emmet_ls",
---					"graphql",
---					"svelte",
---					"terraformls",
---					"volar",
---					"yamlls",
---					"taplo",
---					"csharp_ls",
---					"elixirls",
---				},
---				auto_update = true,
---				integrations = {
---					["mason-lspconfig"] = true,
---					["mason-null-ls"] = true,
---					["mason-nvim-dap"] = true,
---				},
---				run_on_start = true,
---			})
---		end,
---	}, -- Mason installer utility to ensure installed LSP's
---	"jay-babu/mason-nvim-dap.nvim", -- Better integration for Mason and nvim-dap
---	{
---		"jay-babu/mason-null-ls.nvim",
---		config = function()
---			local servers = {
---				"prettier",
---				"black",
---				"stylua",
---				"clang-format",
---				"djlint",
---				"joker",
---				"ktlint",
---				"latexindent",
---				"rubocop",
---				"sqlfmt",
---				"buildifier",
---				"fourmolu",
---				"shfmt",
---				"csharpier",
---				"gdtoolkit",
---				"flake8",
---				"checkstyle",
---				"cpplint",
---				"eslint_d",
---				"hadolint",
---				"clj-kondo",
---				"selene",
---				"sqlfluff",
---				"stylelint",
---				"curlylint",
---				"vint",
---				"yamllint",
---				"trivy",
---				"checkmake",
---				"codespell",
---				"proselint",
---			}
---
---			require("mason-null-ls").setup({
---				ensure_installed = servers,
---				automatic_installation = true,
---				handlers = {},
---			})
---		end,
---	},
---	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } }, -- Configs for DAP
---}
+return {
+    -- Enable LSP
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            'mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        },
+    },
+
+    -- Simple LSP installer
+    {
+        'williamboman/mason.nvim',
+        config = function()
+            local settings = {
+                ui = {
+                    border = 'rounded',
+                    icons = {
+                        package_installed = '',
+                        package_pending = '',
+                        package_uninstalled = '',
+                    },
+                },
+                log_level = vim.log.levels.INFO,
+                max_concurrent_installers = 4,
+            }
+
+            require('mason').setup(settings)
+        end,
+    },
+
+    -- Configuration and automatic installation of LSPs
+    {
+        'williamboman/mason-lspconfig.nvim',
+        config = function()
+            local servers = {
+                'lua_ls',
+                'cssls',
+                'html',
+                'tsserver',
+                'pyright',
+                'jsonls',
+                'angularls',
+                'asm_lsp',
+                'clangd',
+                'clojure_lsp',
+                'dockerls',
+                'hls',
+                'jdtls',
+                'kotlin_language_server',
+                'ltex',
+                'ruby_lsp',
+                'rust_analyzer',
+                'sqlls',
+                'emmet_ls',
+                'graphql',
+                'svelte',
+                'terraformls',
+                'volar',
+                'yamlls',
+                'taplo',
+                'csharp_ls',
+                'elixirls',
+            }
+
+            require('mason-lspconfig').setup({
+                ensure_installed = servers,
+                automatic_installation = true,
+            })
+
+            local lspconfig = require('lspconfig')
+            local opts = {}
+
+            local handlers = require('plugins.lsp.handlers')
+
+            for _, server in pairs(servers) do
+                opts = {
+                    on_attach = handlers.on_attach,
+                    capabilities = handlers.capabilities,
+                }
+
+                server = vim.split(server, '@')[1]
+
+                local require_ok, conf_opts = pcall(require, 'plugins.lsp.settings.' .. server)
+                if require_ok then
+                    opts = vim.tbl_deep_extend('force', conf_opts, opts)
+                end
+
+                lspconfig[server].setup(opts)
+            end
+
+            lspconfig.gdscript.setup({})
+        end,
+    },
+
+    -- LSP diagnostics, formatting, completions and code actions
+    {
+        'nvimtools/none-ls.nvim',
+        config = function()
+            local none_ls = require('null-ls')
+            local code_actions = none_ls.builtins.code_actions
+            local diagnostics = none_ls.builtins.diagnostics
+            local formatting = none_ls.builtins.formatting
+            local hover = none_ls.builtins.hover
+            local completion = none_ls.builtins.completion
+
+            local sources = {
+                completion.spell,
+                completion.tags,
+                code_actions.ts_node_action,
+                diagnostics.actionlint,
+                diagnostics.alex,
+                diagnostics.cppcheck,
+                diagnostics.deadnix,
+                diagnostics.fish,
+                diagnostics.gitlint,
+                diagnostics.reek,
+                diagnostics.statix,
+                diagnostics.terraform_validate,
+                diagnostics.tfsec,
+                diagnostics.todo_comments,
+                diagnostics.trail_space,
+                formatting.alejandra,
+                hover.dictionary,
+                hover.printenv,
+                none_ls.builtins.formatting.stylua.with({
+                    extra_args = {
+                        '--config-path',
+                        vim.fn.expand('~/.config/nvim/lua/plugins/lsp/settings/stylua.toml'),
+                    },
+                }),
+            }
+
+            none_ls.setup({
+                debug = false,
+                sources = sources,
+                diagnostics_format = '#{s} | #{m}',
+            })
+        end,
+    },
+
+    -- Better integration for Mason and nvim-dap
+    'jay-babu/mason-nvim-dap.nvim',
+    {
+        'jay-babu/mason-null-ls.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = {
+            'williamboman/mason.nvim',
+            'nvimtools/none-ls.nvim',
+        },
+        config = function()
+            local servers = {
+                'prettier',
+                'black',
+                'stylua',
+                'clang-format',
+                'djlint',
+                'joker',
+                'ktlint',
+                'latexindent',
+                'rubocop',
+                'sqlfmt',
+                'buildifier',
+                'fourmolu',
+                'shfmt',
+                'csharpier',
+                'gdtoolkit',
+                'flake8',
+                'checkstyle',
+                'cpplint',
+                'eslint_d',
+                'hadolint',
+                'clj-kondo',
+                'selene',
+                'sqlfluff',
+                'stylelint',
+                'curlylint',
+                'vint',
+                'yamllint',
+                'trivy',
+                'checkmake',
+                'codespell',
+                'proselint',
+            }
+
+            require('mason-null-ls').setup({
+                ensure_installed = servers,
+                automatic_installation = true,
+            })
+        end,
+    },
+
+    -- UI for nvim-dap
+    {
+        'rcarriga/nvim-dap-ui',
+        dependencies = {
+            {
+                'mfussenegger/nvim-dap',
+                config = function()
+                    local sign = vim.fn.sign_define
+
+                    sign('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+                    sign(
+                        'DapBreakpointCondition',
+                        { text = '●', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' }
+                    )
+                    sign('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+                end,
+            },
+            'nvim-neotest/nvim-nio',
+        },
+        config = function()
+            local dap, dapui = require('dap'), require('dapui')
+
+            local keymap_opts = { noremap = true, silent = true }
+            dapui.setup()
+
+            vim.keymap.set('n', '<F3>', '<cmd>lua require("dapui").toggle(tray")<cr>', keymap_opts)
+            -- dap.listeners.before.attach.dapui_config = function()
+            --     dapui.open()
+            -- end
+            -- dap.listeners.before.launch.dapui_config = function()
+            --     dapui.open()
+            -- end
+            -- dap.listeners.before.event_terminated.dapui_config = function()
+            --     dapui.close()
+            -- end
+            -- dap.listeners.before.event_exited.dapui_config = function()
+            --     dapui.close()
+            -- end
+        end,
+    },
+}

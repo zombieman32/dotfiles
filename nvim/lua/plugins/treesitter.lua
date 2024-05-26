@@ -8,20 +8,20 @@ return {
         config = function()
             local configs = require('nvim-treesitter.configs')
 
-            vim.api.nvim_set_hl(0, '@keyword', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@def', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@string', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@conditional', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@repeat', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@exception', { italic = true, bold = true })
-            vim.api.nvim_set_hl(0, '@comment', { italic = true })
+            -- vim.api.nvim_set_hl(0, '@keyword', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@def', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@string', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@conditional', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@repeat', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@exception', { italic = true, bold = true })
+            -- vim.api.nvim_set_hl(0, '@comment', { italic = true })
 
             configs.setup({
                 ensure_installed = 'all',
                 highlight = {
                     enable = true, -- false will disable the whole extension
                     disable = { 'org' }, -- list of language that will be disabled
-                    additional_vim_regex_highlighting = true,
+                    additional_vim_regex_highlighting = false,
                 },
                 indent = { enable = true, disable = { 'yaml', 'gdscript' } },
                 textobjects = {
