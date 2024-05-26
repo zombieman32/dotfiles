@@ -148,7 +148,7 @@ return {
             { '<tab><tab>', mode = { 'n' } },
         },
         branch = 'main',
-        dependencies = { 'nvim-web-devicons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('bookmarks').setup()
         end,

@@ -1,6 +1,6 @@
 return {
     -- Icons
-    'kyazdani42/nvim-web-devicons',
+    'nvim-tree/nvim-web-devicons',
 
     -- Indent lines
     {
@@ -59,12 +59,8 @@ return {
             vim.o.termguicolors = true
         end,
         opts = {
-            -- Warn if any required option above is missing. May emit false positives
-            -- if some other plugin modifies them, which in that case you can just
-            -- ignore. Feel free to remove this line after you've gotten Modicator to
-            -- work properly.
-            show_warnings = true,
-        }
+            show_warnings = false,
+        },
     },
 
     -- Better UI
@@ -75,19 +71,29 @@ return {
 
     -- Zen mode
     {
-        'Pocco81/true-zen.nvim',
-        config = function()
-            require('true-zen').setup({
-                integrations = {
-                    tmux = true,
-                    kitty = {
-                        enabled = true,
-                        font = '+3',
-                    },
-                    twilight = true,
-                    lualine = true,
+        'folke/zen-mode.nvim',
+        opts = {
+            window = {
+                width = 0.8,
+                height = 1,
+            },
+            plugins = {
+                options = {
+                    show_cmd = true,
                 },
-            })
+                twilight = { enabled = true },
+                gitsigns = { enabled = true },
+                tmux = { enabled = true },
+                kitty = {
+                    enabled = true,
+                    font = '+4',
+                },
+            },
+        },
+        config = function()
+            local mocha = require('catppuccin.palettes').get_palette('mocha')
+
+            vim.api.nvim_set_hl(0, 'ZenBg', { bg = mocha.base })
         end,
     },
 
