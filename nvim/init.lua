@@ -1,6 +1,6 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwplugin = 1
 vim.g.netrw_use_noswf = 0
 vim.g.number = 1
 vim.g.mapleader = ','
@@ -21,15 +21,50 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins', {
+    git = {
+        log = { -4 },
+        timeout = 90,
+    },
     ui = {
+        size = { width = 0.9, height = 0.7 },
         border = 'rounded',
+        backdrop = 80,
+        title = 'lazy 󰒲 󰒲 󰒲 ',
+        title_pos = 'left',
+        icons = {
+            cmd = ' ',
+            config = '',
+            event = '',
+            ft = ' ',
+            init = ' ',
+            import = ' ',
+            keys = ' ',
+            lazy = '󰒲 ',
+            loaded = '●',
+            not_loaded = '○',
+            plugin = ' ',
+            runtime = ' ',
+            require = '󰢱 ',
+            source = ' ',
+            start = ' ',
+            task = '✔ ',
+            list = {
+                '●',
+                '➜',
+                '★',
+                '‒',
+            },
+        },
+    },
+    checker = {
+        enabled = true,
+        frequency = 86400,
     },
 })
 
 require('options')
 require('keymaps')
---require('lsp.handlers')
+require('plugins.lsp.handlers')
 require('autocmd')
---require('bqnlsp')
---require('bqnparser')
---require('lspconfig').gdscript.setup({})
+require('bqnlsp')
+require('bqnparser')
