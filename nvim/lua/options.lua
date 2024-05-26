@@ -59,7 +59,7 @@ o.laststatus = 2
 g.markdown_composer_autostart = 0
 g.markdown_composer_browser = 'epiphany'
 vim.loader.enable()
-o.foldmethod = 'syntax'
+o.foldmethod = 'manual'
 o.spelllang = 'es_mx'
 
 o.shortmess:append('c')
