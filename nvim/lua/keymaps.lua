@@ -53,10 +53,7 @@ keymap('n', '<S-x>', ':redo<CR>', opts)
 -- Nvimtree
 keymap('n', '<A-t>', '<Cmd>NvimTreeToggle<CR>', opts)
 
--- Take photo of code
-keymap('n', 'ff', '$', opts)
-
-keymap('n', 'ff', '$', opts)
+keymap('n', 'gf', '$', opts)
 
 -- Move lines up or down
 keymap('n', '<A-k>', ':move -2<cr>', opts)
@@ -76,19 +73,16 @@ keymap('n', '<A-Left>', ':vertical resize -2<CR>', opts)
 keymap('n', '<A-Right>', ':vertical resize +2<CR>', opts)
 
 -- [Visual] --
-keymap('v', 'ff', '$', opts)
+keymap('v', 'gf', '$', opts)
 
--- Telescope --
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap(
     'n',
     '<C-f>',
-    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>",
     opts
 )
 keymap('n', '<c-t>', '<cmd>Telescope live_grep<cr>', opts)
 
-keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR>', opts)
 keymap('n', '<leader>L', '<Cmd>Lazy<CR>', opts)
 
 if vim.bo.filetype == 'tidal' then
@@ -105,4 +99,4 @@ keymap('n', '<F2>', "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codesh
 keymap('v', '<F2>', "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codeshot visual mode
 keymap('n', '<F12>', '<cmd>:set spell! <CR>', opts) -- Activate spelling
 keymap('i', '<F12>', '<cmd>:set spell! <CR>', opts)
-keymap('n', '<F11>', '<cmd>:ZenMode <CR>', opts)
+keymap('n', '<F11>', '<cmd>ZenMode<CR>', opts)
