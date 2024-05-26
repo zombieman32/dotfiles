@@ -284,8 +284,8 @@ return {
                 -- operators = { gc = "Comments" },
                 icons = {
                     breadcrumb = '»', -- symbol used in the command line area that shows your active key combo
-                    separator = '', -- symbol used between a key and it's label
-                    group = '󰜌', -- symbol prepended to a group
+                    separator = ' ', -- symbol used between a key and it's label
+                    group = '󰜌 ', -- symbol prepended to a group
                 },
                 popup_mappings = {
                     scroll_down = '<c-d>', -- binding to scroll down inside the popup
@@ -296,7 +296,7 @@ return {
                     position = 'bottom', -- bottom, top
                     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
                     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-                    winblend = 0,
+                    winblend = 30,
                 },
                 layout = {
                     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -329,7 +329,7 @@ return {
 
             local mappings = {
                 ['L'] = { '<cmd>Lazy<cr>', 'Lazy' },
-                ['a'] = { '<cmd>Alpha<cr>', 'Alpha' },
+                ['A'] = { 'Alpha', ':Alpha<cr>' },
                 ['b'] = {
                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
                     'Buffers',
