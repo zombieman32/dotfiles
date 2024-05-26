@@ -45,7 +45,6 @@ return {
                 'clangd',
                 'clojure_lsp',
                 'dockerls',
-                'hls',
                 'jdtls',
                 'kotlin_language_server',
                 'ltex',
@@ -81,7 +80,8 @@ return {
 
                 server = vim.split(server, '@')[1]
 
-                local require_ok, conf_opts = pcall(require, 'plugins.lsp.settings.' .. server)
+                local require_ok, conf_opts = pcall(require,
+                    'plugins.lsp.settings.' .. server)
                 if require_ok then
                     opts = vim.tbl_deep_extend('force', conf_opts, opts)
                 end
@@ -126,7 +126,9 @@ return {
                 none_ls.builtins.formatting.stylua.with({
                     extra_args = {
                         '--config-path',
-                        vim.fn.expand('~/.config/nvim/lua/plugins/lsp/settings/stylua.toml'),
+                        vim.fn.expand(
+                        '~/.config/nvim/lua/plugins/lsp/settings/stylua.toml'
+                        ),
                     },
                 }),
             }
@@ -199,12 +201,30 @@ return {
                 config = function()
                     local sign = vim.fn.sign_define
 
-                    sign('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+                    sign('DapBreakpoint',
+                        {
+                            text = '●',
+                            texthl = 'DapBreakpoint',
+                            linehl = '',
+                            numhl = ''
+                        })
+
                     sign(
                         'DapBreakpointCondition',
-                        { text = '●', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' }
-                    )
-                    sign('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+                        {
+                            text = '●',
+                            texthl = 'DapBreakpointCondition',
+                            linehl = '',
+                            numhl = ''
+                        })
+
+                    sign('DapLogPoint',
+                        {
+                            text = '◆',
+                            texthl = 'DapLogPoint',
+                            linehl = '',
+                            numhl = ''
+                        })
                 end,
             },
             'nvim-neotest/nvim-nio',
@@ -215,19 +235,59 @@ return {
             local keymap_opts = { noremap = true, silent = true }
             dapui.setup()
 
-            vim.keymap.set('n', '<F3>', '<cmd>lua require("dapui").toggle(tray")<cr>', keymap_opts)
-            -- dap.listeners.before.attach.dapui_config = function()
-            --     dapui.open()
-            -- end
-            -- dap.listeners.before.launch.dapui_config = function()
-            --     dapui.open()
-            -- end
-            -- dap.listeners.before.event_terminated.dapui_config = function()
-            --     dapui.close()
-            -- end
-            -- dap.listeners.before.event_exited.dapui_config = function()
-            --     dapui.close()
-            -- end
+            vim.keymap.set('n',
+                '<F3>',
+                '<cmd>lua require("dapui").toggle("tray")<cr>', keymap_opts)
+            dap.listeners.before.attach.dapui_config = function()
+                dapui.open()
+            end
+            dap.listeners.before.launch.dapui_config = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated.dapui_config = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited.dapui_config = function()
+                dapui.close()
+            end
         end,
     },
+
+    -- Complete highlight colors with LSP
+    'folke/lsp-colors.nvim',
+
+    -- LSP Utilities
+    'niuiic/lsp-utils.nvim',
+
+    -- Make LSP use fzf
+    {
+        'ojroques/nvim-lspfuzzy',
+        dependencies = {
+            { 'junegunn/fzf' },
+            { 'junegunn/fzf.vim' }, -- to enable preview (optional)
+        },
+        config = true,
+    },
+
+    -- VSCode lightbuld for code actions
+    {
+        'kosayoda/nvim-lightbulb',
+        config = function()
+            require('nvim-lightbulb').setup({
+                autocmd = {
+                    enabled = true,
+                },
+                sign = {
+                    enabled = false,
+                },
+                float = {
+                    enabled = true,
+                    text = '󱠂',
+                },
+            })
+        end,
+    },
+
+    -- Statusline components for LSP
+    'nvim-lua/lsp-status.nvim',
 }

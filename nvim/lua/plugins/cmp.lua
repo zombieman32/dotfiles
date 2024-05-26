@@ -124,6 +124,7 @@ return {
                     { name = 'path' },
                     { name = 'orgmode' },
                     { name = 'neorg' },
+                    { name = 'mdlink' },
                 }),
                 confirm_opts = {
                     behavior = cmp.ConfirmBehavior.Replace,

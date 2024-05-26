@@ -146,7 +146,7 @@ return {
                 add_close_pattern = true, -- true, 'last_line' or false
 
                 matchup_patterns = {
-                    { '{', '}' },
+                    { '{',  '}' },
                     { '%(', ')' }, -- % to escape lua pattern char
                     { '%[', ']' }, -- % to escape lua pattern char
                 },
@@ -155,4 +155,27 @@ return {
             })
         end,
     },
+
+    -- Experimental UI improvements
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify',
+        },
+    },
+
+    -- More UI improvements
+    {
+        'CosmicNvim/cosmic-ui',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        config = true,
+    },
+
+    -- Buffer switcher
+    'matbme/JABS.nvim'
 }

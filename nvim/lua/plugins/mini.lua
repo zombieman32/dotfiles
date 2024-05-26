@@ -4,24 +4,27 @@ return {
         verssion = false,
         config = function()
             local MiniMap = require('mini.map')
+            local MiniAI = require('mini.ai')
 
             require('mini.animate').setup()
             require('mini.cursorword').setup()
             require('mini.surround').setup()
             require('mini.basics').setup()
             require('mini.splitjoin').setup()
-            require('mini.ai').setup()
+
+            MiniAI.setup()
+
             require('mini.move').setup()
             require('mini.operators').setup()
             require('mini.trailspace').setup()
 
             MiniMap.setup({
                 symbols = {
-                    encode = MiniMap.gen_encode_symbols.shade('2x1'),
+                    encode = MiniMap.gen_encode_symbols.dot('2x1'),
                     scroll_line = ' ',
                 },
                 window = {
-                    winblend = 50,
+                    winblend = 70,
                     zindex = 100
                 }
             })

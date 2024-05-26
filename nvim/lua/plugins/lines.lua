@@ -198,7 +198,6 @@ return {
                 },
                 tabline = {},
                 extensions = {
-                    'fzf',
                     'nvim-dap-ui',
                     'oil',
                     'lazy',

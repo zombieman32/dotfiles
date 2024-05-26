@@ -63,7 +63,7 @@ return {
             autopairs.add_rules({
                 -- Rule for a pair with left-side ' ' and right side ' '
                 Rule(' ', ' ')
-                    -- Pair will only occur if the conditional function returns true
+                -- Pair will only occur if the conditional function returns true
                     :with_pair(
                         function(opts)
                             -- We are checking if we are inserting a space in (), [], or {}
@@ -77,7 +77,7 @@ return {
                     )
                     :with_move(conds.none())
                     :with_cr(conds.none())
-                    -- We only want to delete the pair of spaces when the cursor is as such: ( | )
+                -- We only want to delete the pair of spaces when the cursor is as such: ( | )
                     :with_del(
                         function(opts)
                             local col = vim.api.nvim_win_get_cursor(0)[2]
@@ -102,7 +102,7 @@ return {
                         end)
                         :with_del(conds.none())
                         :use_key(bracket[2])
-                        -- Removes the trailing whitespace that can occur without this
+                    -- Removes the trailing whitespace that can occur without this
                         :replace_map_cr(
                             function(_)
                                 return '<C-c>2xi<CR><C-c>O'
@@ -240,6 +240,29 @@ return {
     -- OrgMode
     { 'nvim-orgmode/orgmode', config = true },
 
+    -- Neorg
+    {
+        'nvim-neorg/neorg',
+        dependencies = {
+            'luarocks.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-neorg/neorg-telescope',
+            'nvim-neorg/lua-utils.nvim',
+            'pysan3/pathlib.nvim',
+            'nvim-neotest/nvim-nio',
+            'MunifTanjim/nui.nvim',
+        },
+        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = '*', -- Pin Neorg to the latest stable release
+        opts = {
+            load = {
+                ['core.defaults'] = {},
+                ['core.integrations.telescope'] = {},
+            },
+        },
+        config = true,
+    },
+
     -- Add utf-8 bullet points
     {
         'akinsho/org-bullets.nvim',
@@ -261,22 +284,22 @@ return {
             local which_key = require('which-key')
             local setup = {
                 plugins = {
-                    marks = true, -- shows a list of your marks on ' and `
-                    registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                    marks = true,         -- shows a list of your marks on ' and `
+                    registers = true,     -- shows your registers on " in NORMAL or <C-r> in INSERT mode
                     spelling = {
-                        enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+                        enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
                         suggestions = 20, -- how many suggestions should be shown in the list?
                     },
                     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                     -- No actual key bindings are created
                     presets = {
-                        operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-                        motions = false, -- adds help for motions
+                        operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
+                        motions = false,      -- adds help for motions
                         text_objects = false, -- help for text objects triggered after entering an operator
-                        windows = true, -- default bindings on <c-w>
-                        nav = true, -- misc bindings to work with windows
-                        z = true, -- bindings for folds, spelling and others prefixed with z
-                        g = true, -- bindings for prefixed with g
+                        windows = true,       -- default bindings on <c-w>
+                        nav = true,           -- misc bindings to work with windows
+                        z = true,             -- bindings for folds, spelling and others prefixed with z
+                        g = true,             -- bindings for prefixed with g
                     },
                 },
                 -- add operators that will trigger motion and text object completion
@@ -289,25 +312,25 @@ return {
                 },
                 popup_mappings = {
                     scroll_down = '<c-d>', -- binding to scroll down inside the popup
-                    scroll_up = '<c-u>', -- binding to scroll up inside the popup
+                    scroll_up = '<c-u>',   -- binding to scroll up inside the popup
                 },
                 window = {
-                    border = 'rounded', -- none, single, double, shadow
-                    position = 'bottom', -- bottom, top
-                    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+                    border = 'rounded',       -- none, single, double, shadow
+                    position = 'bottom',      -- bottom, top
+                    margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
                     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
                     winblend = 30,
                 },
                 layout = {
-                    height = { min = 4, max = 25 }, -- min and max height of the columns
-                    width = { min = 20, max = 50 }, -- min and max width of the columns
-                    spacing = 3, -- spacing between columns
-                    align = 'left', -- align columns left, center or right
+                    height = { min = 4, max = 25 },                                           -- min and max height of the columns
+                    width = { min = 20, max = 50 },                                           -- min and max width of the columns
+                    spacing = 3,                                                              -- spacing between columns
+                    align = 'left',                                                           -- align columns left, center or right
                 },
-                ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+                ignore_missing = true,                                                        -- enable this to hide mappings for which you didn't specify a label
                 hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', 'call', 'lua', '^:', '^ ' }, -- hide mapping boilerplate
-                show_help = true, -- show help message on the command line when the popup is visible
-                triggers = 'auto', -- automatically setup triggers
+                show_help = true,                                                             -- show help message on the command line when the popup is visible
+                triggers = 'auto',                                                            -- automatically setup triggers
                 -- triggers = {"<leader>"} -- or specify a list manually
                 triggers_blacklist = {
                     -- list of mode / prefixes that should never be hooked by WhichKey
@@ -319,17 +342,17 @@ return {
             }
 
             local opts = {
-                mode = 'n', -- NORMAL mode
+                mode = 'n',     -- NORMAL mode
                 prefix = '<leader>',
-                buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-                silent = true, -- use `silent` when creating keymaps
+                buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+                silent = true,  -- use `silent` when creating keymaps
                 noremap = true, -- use `noremap` when creating keymaps
-                nowait = true, -- use `nowait` when creating keymaps
+                nowait = true,  -- use `nowait` when creating keymaps
             }
 
             local mappings = {
                 ['L'] = { '<cmd>Lazy<cr>', 'Lazy' },
-                ['A'] = { 'Alpha', ':Alpha<cr>' },
+                ['a'] = { '<cmd>Alpha<cr>', 'Alpha' },
                 ['b'] = {
                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
                     'Buffers',
@@ -411,6 +434,34 @@ return {
                     k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
                     C = { '<cmd>Telescope commands<cr>', 'Commands' },
                 },
+
+                d = {
+                    name = 'DAP',
+                    s = {
+                        '<cmd> lua require("dapui").float_element("scopes", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'Variable Scopes',
+                    },
+                    t = {
+                        '<cmd> lua require("dapui").float_element("stacks", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'Threads and Stack Frames',
+                    },
+                    w = {
+                        '<cmd> lua require("dapui").float_element("watches", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'Watch Expressions',
+                    },
+                    b = {
+                        '<cmd> lua require("dapui").float_element("breakpoints", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'Breakpoints',
+                    },
+                    r = {
+                        '<cmd> lua require("dapui").float_element("repl", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'REPL',
+                    },
+                    c = {
+                        '<cmd> lua require("dapui").float_element("console", {enter = true,position = "center",width = 50,height = 20})<cr>',
+                        'Console',
+                    },
+                },
             }
 
             which_key.setup(setup)
@@ -483,21 +534,393 @@ return {
         config = function()
             require('link-visitor').setup({
                 open_cmd = 'xdg-open',
-                silent = true, -- disable all prints, `false` by defaults skip_confirmation
-                skip_confirmation = false, -- Skip the confirmation step, default: false
-                border = 'rounded', -- none, single, double, rounded, solid, shadow see `:h nvim_open_win()`
+                border = 'rounded',        -- none, single, double, rounded, solid, shadow see `:h nvim_open_win()`
             })
         end,
     },
+
+    -- Use luarocks inside nvim
     {
         'vhyrro/luarocks.nvim',
-        priority = 1001, -- this plugin needs to run before anything else
+        priority = 1100, -- this plugin needs to run before anything else
         opts = {
             rocks = { 'magick' },
         },
+        config = true,
     },
+
+    -- Generate images with kitty protocol
+    -- {
+    --     '3rd/image.nvim',
+    --     dependencies = { 'luarocks.nvim' },
+    --     config = function()
+    --         local image = require('image')
+    --
+    --         image.setup({
+    --             integrations = {
+    --                 neorg = {
+    --                     enabled = true,
+    --                 },
+    --             },
+    --         })
+    --     end,
+    -- },
     {
-        '3rd/image.nvim',
-        dependencies = { 'luarocks.nvim' },
+        'norcalli/nvim-terminal.lua',
+        config = true,
     },
+
+    -- Clipboard history
+    {
+        'AckslD/nvim-neoclip.lua',
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+        },
+        config = true,
+    },
+
+    -- List of utilities to debug
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        opts = {
+            position = 'right',
+        },
+    },
+
+    -- Task Manager
+    { 'niuiic/task.nvim',     dependencies = { 'niuiic/core.nvim' } },
+
+    -- Markers
+    {
+        'niuiic/track.nvim',
+        dependencies = { 'niuiic/core.nvim', 'nvim-telescope/telescope.nvim' },
+        options = true,
+    },
+
+    --Translation
+    {
+        'niuiic/translate.nvim',
+        dependencies = { 'niuiic,core.nvim' },
+        options = true,
+    },
+
+    -- Smooth Scrolling
+    'niuiic/scroll.nvim',
+
+    -- Markdown preview with glow
+    {
+        'ellisonleao/glow.nvim',
+        cmd = 'Glow',
+        config = function()
+            require('glow').setup({
+                border = 'rounded',
+                style = 'dark',
+            })
+        end,
+    },
+
+    -- Links utilities in Markdwon
+    {
+        'Nedra1998/nvim-mdlink',
+        config = function()
+            require('nvim-mdlink').setup({
+                keymap = true,
+                cmp = true,
+            })
+
+            local has_mdlink, mdlink = pcall(require, 'nvim-mdlink.cmp')
+            if has_mdlink then
+                require('cmp').register_source('mdlink', mdlink.new())
+            end
+        end,
+    },
+
+    -- Notify bad nvim practices
+    'antonk52/bad-practices.nvim',
+
+    -- Cellular automaton
+    {
+        'eandrju/cellular-automaton.nvim',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+    },
+
+    -- Minesweeper
+    'seandewar/nvimesweeper',
+
+    -- Look for ToDo comments
+    {
+        'folke/todo-comments.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+
+    -- Divider lines
+    {
+        'niuiic/divider.nvim',
+        config = true,
+    },
+
+    -- Edit a part of a file
+    {
+        'niuiic/part-edit.nvim',
+        dependencies = {
+            'niuiic/core.nvim',
+        },
+        config = true,
+    },
+
+    -- Autosave
+    {
+        'okuuva/auto-save.nvim',
+        cmd = 'ASToggle',                         -- optional for lazy loading on command
+        event = { 'InsertLeave', 'TextChanged' }, -- optional for lazy loading on trigger events
+    },
+
+    -- Highlight
+    {
+        'Pocco81/HighStr.nvim',
+        config = function()
+            local high_str = require('high-str')
+            local mocha = require('catppuccin.palettes').get_palette('mocha')
+
+            high_str.setup({
+                verbosity = 0,
+                saving_path = '/tmp/highstr/',
+                highlight_colors = {
+                    -- color_id = {"bg_hex_code",<"fg_hex_code"/"smart">}
+                    color_0 = { mocha.crust, 'smart' },    -- Cosmic charcoal
+                    color_1 = { mocha.yellow, 'smart' },   -- Pastel yellow
+                    color_2 = { mocha.sapphire, 'smart' }, -- Aqua menthe
+                    color_3 = { mocha.mauve, 'smart' },    -- Proton purple
+                    color_4 = { mocha.red, 'smart' },      -- Orange red
+                    color_5 = { mocha.green, 'smart' },    -- Office green
+                    color_6 = { mocha.blue, 'smart' },     -- Just blue
+                    color_7 = { mocha.pink, 'smart' },     -- Blush pink
+                    color_8 = { mocha.overlay, 'smart' },  -- Cosmic latte
+                    color_9 = { mocha.peach, 'smart' },    -- Fallow brown
+                },
+            })
+        end,
+    },
+
+    -- Better folding
+    {
+        'chrisgrieser/nvim-origami',
+        event = 'BufReadPost', -- later or on keypress would prevent saving folds
+        opts = true,           -- needed even when using default config
+    },
+
+    -- Automatically genereate licenses
+    {
+        'https://git.sr.ht/~reggie/licenses.nvim',
+        config = function()
+            require('licenses').setup({
+                copyright_holder = 'Rafael Verde',
+                email = 'rafaelverde10@proton.me',
+                license = 'mit',
+            })
+        end,
+    },
+
+    -- Extended C-a and C-x
+    {
+        'RutaTang/compter.nvim',
+        config = function()
+            require('compter').setup({
+                fallback = true,
+                templates = {
+                    {
+                        -- For numbers
+                        pattern = [[-\?\d\+]],
+                        priority = 0,
+                        increase = function(content)
+                            content = tonumber(content)
+                            return content + 1, true
+                        end,
+                        decrease = function(content)
+                            content = tonumber(content)
+                            return content - 1, true
+                        end,
+                    },
+
+                    -- For lowercase alphabet
+                    {
+                        pattern = [[\l]],
+                        priority = 0,
+                        increase = function(content)
+                            local ansiCode = string.byte(content) + 1
+                            if ansiCode > string.byte('z') then
+                                ansiCode = string.byte('a')
+                            end
+                            local char = string.char(ansiCode)
+                            return char, true
+                        end,
+                        decrease = function(content)
+                            local ansiCode = string.byte(content) - 1
+                            if ansiCode < string.byte('a') then
+                                ansiCode = string.byte('z')
+                            end
+                            local char = string.char(ansiCode)
+                            return char, true
+                        end,
+                    },
+
+                    -- for uppercase alphabet
+                    {
+                        pattern = [[\u]],
+                        priority = 0,
+                        increase = function(content)
+                            local ansiCode = string.byte(content) + 1
+                            if ansiCode > string.byte('Z') then
+                                ansiCode = string.byte('A')
+                            end
+                            local char = string.char(ansiCode)
+                            return char, true
+                        end,
+                        decrease = function(content)
+                            local ansiCode = string.byte(content) - 1
+                            if ansiCode < string.byte('A') then
+                                ansiCode = string.byte('Z')
+                            end
+                            local char = string.char(ansiCode)
+                            return char, true
+                        end,
+                    },
+
+                    -- for date format: dd/mm/YYYY
+                    {
+                        pattern = [[\d\{2}/\d\{2}/\d\{4}]],
+                        priority = 100,
+                        increase = function(content)
+                            local ts = vim.fn.strptime('%d/%m/%Y', content)
+                            if ts == 0 then
+                                return content, false
+                            else
+                                ts = ts + 24 * 60 * 60
+                                return vim.fn.strftime('%d/%m/%Y', ts), true
+                            end
+                        end,
+                        decrease = function(content)
+                            local ts = vim.fn.strptime('%d/%m/%Y', content)
+                            if ts == 0 then
+                                return content, false
+                            else
+                                ts = ts - 24 * 60 * 60
+                                return vim.fn.strftime('%d/%m/%Y', ts), true
+                            end
+                        end,
+                    },
+                },
+            })
+        end,
+    },
+
+    -- Toggle relative and absolute number
+    'cpea2506/relative-toggle.nvim',
+
+    --Better macros
+    {
+        'chrisgrieser/nvim-recorder',
+        dependencies = 'rcarriga/nvim-notify', -- optional
+        opts = {},                             -- required even with default settings, since it calls `setup()`
+    },
+
+    -- Draw Venn diagrams
+    'jbyuki/venn.nvim',
+
+    -- images
+    'edluffy/hologram.nvim',
+
+    -- Show colorcolumn when column limit is exceeded
+    {
+        'm4xshen/smartcolumn.nvim',
+        opts = {
+            disabled_filetypes = {
+                "NvimTree",
+                "lazy",
+                "mason",
+                "help",
+                "checkhealth",
+                "lspinfo",
+                "noice",
+                "Trouble",
+                "fish",
+                "alpha"
+            }
+        },
+        config = true,
+    },
+
+    -- Project Manager
+    {
+        'pluffie/neoproj',
+        cmd = { 'ProjectOpen', 'ProjectNew' },
+    },
+
+    -- Another code screenshoter powered by silicone
+    {
+        'krivahtoo/silicon.nvim',
+        build = './install.sh',
+        config = function()
+            local buffer_name = vim
+            require('silicon').setup({
+                font = 'FiraCode=16',
+                theme = 'Dracula',
+                output = {
+                    path = '/hdd/Imágenes/silicon',
+                    format = 'silicon_'
+                        .. vim.api.nvim_buf_get_name(0)
+                        .. '_[year][month][day]_[hour][minute][second].png',
+                },
+                watermark = {
+                    text = '  @zombieman32',
+                },
+                window_title = function()
+                    return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':~:.')
+                end,
+            })
+        end,
+    },
+
+    -- Yet another code screenshoter powered by carbon
+    {
+        'ellisonleao/carbon-now.nvim',
+        lazy = true,
+        cmd = 'CarbonNow',
+        ---@param opts cn.ConfigSchema
+        opts = {
+            options = {
+                theme = 'onedark',
+                bg = 'pink',
+                titlebar = '   @zombieman32',
+            },
+        },
+    },
+
+    -- Toggle text (true/false, on/off, etc.)
+    { 'nguyenvukhang/nvim-toggler' },
+
+    -- Preview folds
+    { 'anuvyklack/fold-preview.nvim', dependencies = 'anuvyklack/keymap-amend.nvim', config = true },
+
+    -- Open URLs
+    {
+        'sontungexpt/url-open',
+        event = 'VeryLazy',
+        cmd = 'URLOpenUnderCursor',
+        config = function()
+            local status_ok, url_open = pcall(require, 'url-open')
+            if not status_ok then
+                return
+            end
+            url_open.setup({})
+
+            vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>URLOpenUnderCursor<cr>', {noremap = true, silent = true})
+        end,
+    },
+
+    -- Autocreate dirs
+    'mateuszwieloch/automkdir.nvim',
 }
