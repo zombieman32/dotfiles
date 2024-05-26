@@ -100,3 +100,4 @@ keymap('v', '<F2>', "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codesh
 keymap('n', '<F12>', '<cmd>:set spell! <CR>', opts) -- Activate spelling
 keymap('i', '<F12>', '<cmd>:set spell! <CR>', opts)
 keymap('n', '<F11>', '<cmd>ZenMode<CR>', opts)
+keymap('n', '<F5>', '<cmd>Format<CR>', opts)
