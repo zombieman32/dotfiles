@@ -864,7 +864,6 @@ return {
         'krivahtoo/silicon.nvim',
         build = './install.sh',
         config = function()
-            local buffer_name = vim
             require('silicon').setup({
                 font = 'FiraCode=16',
                 theme = 'Dracula',
@@ -875,7 +874,7 @@ return {
                         .. '_[year][month][day]_[hour][minute][second].png',
                 },
                 watermark = {
-                    text = '  @zombieman32',
+                    text = '   @zombieman32',
                 },
                 window_title = function()
                     return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':~:.')
