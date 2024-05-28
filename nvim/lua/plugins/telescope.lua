@@ -129,6 +129,7 @@ return {
             telescope.load_extension('http')
             telescope.load_extension('dap')
             telescope.load_extension('ht')
+            telescope.load_extension('noice')
         end,
     },
 
