@@ -80,8 +80,7 @@ return {
 
                 server = vim.split(server, '@')[1]
 
-                local require_ok, conf_opts = pcall(require,
-                    'plugins.lsp.settings.' .. server)
+                local require_ok, conf_opts = pcall(require, 'plugins.lsp.settings.' .. server)
                 if require_ok then
                     opts = vim.tbl_deep_extend('force', conf_opts, opts)
                 end
@@ -107,7 +106,6 @@ return {
             local sources = {
                 completion.spell,
                 completion.tags,
-                code_actions.ts_node_action,
                 diagnostics.actionlint,
                 diagnostics.alex,
                 diagnostics.cppcheck,
@@ -123,26 +121,61 @@ return {
                 formatting.alejandra,
                 hover.dictionary,
                 hover.printenv,
-                none_ls.builtins.formatting.stylua.with({
+                formatting.stylua.with({
                     extra_args = {
                         '--config-path',
-                        vim.fn.expand(
-                        '~/.config/nvim/lua/plugins/lsp/settings/stylua.toml'
-                        ),
+                        vim.fn.expand('~/.config/nvim/lua/plugins/lsp/settings/stylua.toml'),
                     },
                 }),
+                formatting.black,
+                formatting.prettier,
+                formatting.clang_format,
+                diagnostics.djlint,
+                formatting.joker,
+                diagnostics.ktlint,
+                formatting.rubocop,
+                diagnostics.rubocop,
+                formatting.sqlfmt,
+                formatting.buildifier,
+                diagnostics.buildifier,
+                formatting.shfmt,
+                formatting.csharpier,
+                formatting.gdformat,
+                diagnostics.gdlint,
+                diagnostics.checkstyle,
+                diagnostics.hadolint,
+                diagnostics.selene,
+                diagnostics.sqlfluff,
+                diagnostics.stylelint,
+                diagnostics.vint,
+                diagnostics.yamllint,
+                diagnostics.trivy,
+                diagnostics.checkmake,
+                diagnostics.codespell,
+                diagnostics.proselint,
             }
 
             none_ls.setup({
+                border = 'rounded',
                 debug = false,
                 sources = sources,
                 diagnostics_format = '#{s} | #{m}',
             })
+
+            -- local callback = function()
+            --     vim.lsp.buf.format({
+            --         bufnr = bufnr,
+            --         filter = function(client)
+            --             return client.name == 'null-ls'
+            --         end,
+            --     })
+            -- end
         end,
     },
 
     -- Better integration for Mason and nvim-dap
     'jay-babu/mason-nvim-dap.nvim',
+
     {
         'jay-babu/mason-null-ls.nvim',
         event = { 'BufReadPre', 'BufNewFile' },
@@ -201,30 +234,26 @@ return {
                 config = function()
                     local sign = vim.fn.sign_define
 
-                    sign('DapBreakpoint',
-                        {
-                            text = '●',
-                            texthl = 'DapBreakpoint',
-                            linehl = '',
-                            numhl = ''
-                        })
+                    sign('DapBreakpoint', {
+                        text = '●',
+                        texthl = 'DapBreakpoint',
+                        linehl = '',
+                        numhl = '',
+                    })
 
-                    sign(
-                        'DapBreakpointCondition',
-                        {
-                            text = '●',
-                            texthl = 'DapBreakpointCondition',
-                            linehl = '',
-                            numhl = ''
-                        })
+                    sign('DapBreakpointCondition', {
+                        text = '●',
+                        texthl = 'DapBreakpointCondition',
+                        linehl = '',
+                        numhl = '',
+                    })
 
-                    sign('DapLogPoint',
-                        {
-                            text = '◆',
-                            texthl = 'DapLogPoint',
-                            linehl = '',
-                            numhl = ''
-                        })
+                    sign('DapLogPoint', {
+                        text = '◆',
+                        texthl = 'DapLogPoint',
+                        linehl = '',
+                        numhl = '',
+                    })
                 end,
             },
             'nvim-neotest/nvim-nio',
@@ -235,9 +264,7 @@ return {
             local keymap_opts = { noremap = true, silent = true }
             dapui.setup()
 
-            vim.keymap.set('n',
-                '<F3>',
-                '<cmd>lua require("dapui").toggle("tray")<cr>', keymap_opts)
+            vim.keymap.set('n', '<F3>', '<cmd>lua require("dapui").toggle("tray")<cr>', keymap_opts)
             dap.listeners.before.attach.dapui_config = function()
                 dapui.open()
             end
