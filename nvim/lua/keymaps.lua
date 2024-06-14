@@ -18,8 +18,6 @@ vim.g.maplocalleader = ','
 -- Normal --
 
 -- Better window navigation
-keymap('n', 'k', 'kzz', opts)
-keymap('n', 'j', 'jzz', opts)
 keymap('n', 'Q', ':q<CR>', opts)
 
 keymap('n', '<C-Left>', '<C-w>h', opts)
@@ -100,4 +98,4 @@ keymap('v', '<F2>', "<cmd> lua require('code-shot').shot()<cr>", opts) -- Codesh
 keymap('n', '<F12>', '<cmd>:set spell! <CR>', opts) -- Activate spelling
 keymap('i', '<F12>', '<cmd>:set spell! <CR>', opts)
 keymap('n', '<F11>', '<cmd>ZenMode<CR>', opts)
-keymap('n', '<F5>', '<cmd>Format<CR>', opts)
+keymap('n', '<F5>', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
