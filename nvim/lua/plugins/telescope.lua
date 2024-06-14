@@ -104,6 +104,9 @@ return {
                     },
                     heading = {
                         treesitter = true
+                    },
+                    lazy = {
+                        theme = 'catppuccin'
                     }
                 },
             })
@@ -118,10 +121,8 @@ return {
             telescope.load_extension('zoxide')
             telescope.load_extension('docker')
             telescope.load_extension('rails')
-            telescope.load_extension('telescope-tabs')
             telescope.load_extension('undo')
             telescope.load_extension('lazy_plugins')
-            telescope.load_extension('octo')
             telescope.load_extension('tmux')
             telescope.load_extension('emoji')
             telescope.load_extension('lsp_handlers')
@@ -129,7 +130,7 @@ return {
             telescope.load_extension('http')
             telescope.load_extension('dap')
             telescope.load_extension('ht')
-            telescope.load_extension('noice')
+            -- telescope.load_extension('noice')
         end,
     },
 
@@ -160,23 +161,13 @@ return {
     -- Preview media files in Telescope
     {
         'nvim-telescope/telescope-media-files.nvim',
+        lazy = true,
         dependencies = { 'nvim-telescope/telescope.nvim' },
     },
 
     -- Search symbols in Telescope
     {
         'nvim-telescope/telescope-symbols.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-    },
-
-    -- Search tabs in Telescope
-    {
-        'LukasPietzschmann/telescope-tabs',
-        config = function()
-            require('telescope-tabs').setup({
-                -- Your custom config :^)
-            })
-        end,
         dependencies = { 'nvim-telescope/telescope.nvim' },
     },
 
@@ -197,7 +188,7 @@ return {
     'camgraff/telescope-tmux.nvim',
     {
         'gbirke/telescope-foldmarkers.nvim',
-        requires = { 'nvim-telescope/telescope.nvim' },
+        dependencies = { 'nvim-telescope/telescope.nvim' },
     },
 
     -- Browse through rails project

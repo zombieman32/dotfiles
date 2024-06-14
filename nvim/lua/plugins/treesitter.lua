@@ -65,20 +65,21 @@ return {
                         },
                     },
                 },
-                autotag = {
-                    enable = true,
-                },
             })
         end,
     },
-    'nvim-treesitter/nvim-treesitter-context', -- Show code context for large functions
+
+    -- Show code context for large functions
+    'nvim-treesitter/nvim-treesitter-context',
+
+    -- Running functions on nodes
     {
         'ckolkey/ts-node-action',
         dependencies = { 'nvim-treesitter' },
-        config = function()
-            require('ts-node-action').setup({})
-        end,
-    }, -- Running functions on nodes
+        config = true,
+    },
+
+    -- Autoclose and autorename html tags
     {
         'windwp/nvim-ts-autotag',
         config = function()
@@ -88,7 +89,9 @@ return {
                 },
             })
         end,
-    }, -- Autoclose and autorename html tags
+    },
+
+
     {
         'code-biscuits/nvim-biscuits',
         dependencies = {

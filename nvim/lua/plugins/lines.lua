@@ -325,5 +325,5 @@ return {
         end,
     },
     -- Status, buffer and window line
-    { 'rebelot/heirline.nvim', enable = false },
+    { 'rebelot/heirline.nvim', enabled = false },
 }

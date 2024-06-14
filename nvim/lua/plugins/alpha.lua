@@ -214,7 +214,7 @@ local splashes = {
 
 return {
     'goolord/alpha-nvim',
-    priority = 1001,
+    priority = 1099,
     config = function()
         local alpha = require('alpha')
         local dashboard = require('alpha.themes.dashboard')

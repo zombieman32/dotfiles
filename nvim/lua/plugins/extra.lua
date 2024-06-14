@@ -368,6 +368,7 @@ return {
                 },
                 ['F'] = { '<cmd>Telescope live_grep theme=ivy<cr>', 'Find Text' },
                 ['P'] = { '<cmd>Telescope projects<cr>', 'Projects' },
+                ['k'] = { '<cmd>lua require("ts-node-action").node_action<cr>', 'Node action' },
 
                 g = {
                     name = 'Git',
@@ -481,7 +482,7 @@ return {
                 output = function()
                     local core = require('core')
                     local buf_name = vim.api.nvim_buf_get_name(0)
-                    return '/hdd/Imágenes/Codeshot' .. core.file.name(buf_name) .. '.png'
+                    return '/hdd/Imágenes/Screenshots/Codeshot' .. core.file.name(buf_name) .. '.png'
                 end,
                 options = function(select_area)
                     if not select_area then
@@ -534,7 +535,7 @@ return {
         config = function()
             require('link-visitor').setup({
                 open_cmd = 'xdg-open',
-                border = 'rounded',        -- none, single, double, rounded, solid, shadow see `:h nvim_open_win()`
+                border = 'rounded', -- none, single, double, rounded, solid, shadow see `:h nvim_open_win()`
             })
         end,
     },
@@ -543,6 +544,7 @@ return {
     {
         'vhyrro/luarocks.nvim',
         priority = 1100, -- this plugin needs to run before anything else
+        lazy = true,
         opts = {
             rocks = { 'magick' },
         },
@@ -573,7 +575,7 @@ return {
     -- Clipboard history
     {
         'AckslD/nvim-neoclip.lua',
-        requires = {
+        dependencies = {
             { 'nvim-telescope/telescope.nvim' },
         },
         config = true,
@@ -595,14 +597,14 @@ return {
     {
         'niuiic/track.nvim',
         dependencies = { 'niuiic/core.nvim', 'nvim-telescope/telescope.nvim' },
-        options = true,
+        config = true,
     },
 
     --Translation
     {
         'niuiic/translate.nvim',
-        dependencies = { 'niuiic,core.nvim' },
-        options = true,
+        dependencies = { 'niuiic/core.nvim' },
+        config = true,
     },
 
     -- Smooth Scrolling
@@ -674,8 +676,8 @@ return {
     -- Autosave
     {
         'okuuva/auto-save.nvim',
-        cmd = 'ASToggle',                         -- optional for lazy loading on command
-        event = { 'InsertLeave', 'TextChanged' }, -- optional for lazy loading on trigger events
+        cmd = 'ASToggle',
+        event = { 'InsertLeave', 'TextChanged' },
     },
 
     -- Highlight
@@ -708,8 +710,8 @@ return {
     -- Better folding
     {
         'chrisgrieser/nvim-origami',
-        event = 'BufReadPost', -- later or on keypress would prevent saving folds
-        opts = true,           -- needed even when using default config
+        event = 'BufReadPost',
+        opts = true, -- needed even when using default config
     },
 
     -- Automatically genereate licenses
@@ -824,7 +826,7 @@ return {
     {
         'chrisgrieser/nvim-recorder',
         dependencies = 'rcarriga/nvim-notify', -- optional
-        opts = {},                             -- required even with default settings, since it calls `setup()`
+        opts = {},                             -- required even with default settings
     },
 
     -- Draw Venn diagrams
@@ -838,17 +840,17 @@ return {
         'm4xshen/smartcolumn.nvim',
         opts = {
             disabled_filetypes = {
-                "NvimTree",
-                "lazy",
-                "mason",
-                "help",
-                "checkhealth",
-                "lspinfo",
-                "noice",
-                "Trouble",
-                "fish",
-                "alpha"
-            }
+                'NvimTree',
+                'lazy',
+                'mason',
+                'help',
+                'checkhealth',
+                'lspinfo',
+                -- 'noice',
+                'Trouble',
+                'fish',
+                'alpha',
+            },
         },
         config = true,
     },
@@ -868,7 +870,7 @@ return {
                 font = 'FiraCode=16',
                 theme = 'Dracula',
                 output = {
-                    path = '/hdd/Imágenes/silicon',
+                    path = '/hdd/Imágenes/Screenshots/silicon',
                     format = 'silicon_'
                         .. vim.api.nvim_buf_get_name(0)
                         .. '_[year][month][day]_[hour][minute][second].png',
@@ -899,7 +901,7 @@ return {
     },
 
     -- Toggle text (true/false, on/off, etc.)
-    { 'nguyenvukhang/nvim-toggler' },
+    { 'nguyenvukhang/nvim-toggler',   config = true },
 
     -- Preview folds
     { 'anuvyklack/fold-preview.nvim', dependencies = 'anuvyklack/keymap-amend.nvim', config = true },
@@ -916,7 +918,7 @@ return {
             end
             url_open.setup({})
 
-            vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>URLOpenUnderCursor<cr>', {noremap = true, silent = true})
+            vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>URLOpenUnderCursor<cr>', { noremap = true, silent = true })
         end,
     },
 

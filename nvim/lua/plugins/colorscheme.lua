@@ -40,7 +40,7 @@ return {
                     enabled = true,
                     indentscope_color = 'teal',
                 },
-                noice = true,
+                -- noice = true,
                 native_lsp = {
                     enabled = true,
                     underlines = {

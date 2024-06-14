@@ -52,6 +52,7 @@ return {
     {
         'mawkler/modicator.nvim',
         dependencies = 'catppuccin', -- Add your colorscheme plugin here
+        lazy = true,
         init = function()
             -- These are required for Modicator to work
             vim.o.cursorline = true
@@ -160,12 +161,14 @@ return {
     {
         'folke/noice.nvim',
         event = 'VeryLazy',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-            'rcarriga/nvim-notify',
-        },
-        options = function()
-            require('noice').setup({
+        opts = {
+                presets = {
+                    bottom_search = true,         -- use a classic bottom cmdline for search
+                    command_palette = true,       -- position the cmdline and popupmenu together
+                    long_message_to_split = true, -- long messages will be sent to a split
+                    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+                    lsp_doc_border = false,       -- add a border to hover docs and signature help
+                },
                 lsp = {
                     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
                     override = {
@@ -175,16 +178,16 @@ return {
                     },
                 },
                 -- you can enable a preset for easier configuration
-                presets = {
-                    bottom_search = true,         -- use a classic bottom cmdline for search
-                    command_palette = true,       -- position the cmdline and popupmenu together
-                    long_message_to_split = true, -- long messages will be sent to a split
-                    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-                    lsp_doc_border = false,       -- add a border to hover docs and signature help
-                },
                 popupmenu = {
                     backend = "cmp",
                 }
+        },
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify',
+        },
+        config = function()
+            require('noice').setup({
             })
         end,
     },

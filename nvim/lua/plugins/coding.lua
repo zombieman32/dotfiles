@@ -24,7 +24,7 @@ return {
     'neomake/neomake',
 
     -- Run blocks of code
-    { 'michaelb/sniprun',   build = 'sh ./install.sh' },
+    { 'michaelb/sniprun',   build = 'sh ./install.sh 1' },
 
     -- Godot integration
     'habamax/vim-godot',
@@ -64,6 +64,7 @@ return {
     {
         'kawre/leetcode.nvim',
         build = ':TSUpdate html',
+        lazy = true,
         dependencies = {
             'nvim-telescope/telescope.nvim',
             'nvim-lua/plenary.nvim', -- required by telescope

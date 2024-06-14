@@ -1,7 +1,7 @@
 return {
     {
         'echasnovski/mini.nvim',
-        verssion = false,
+        version = false,
         config = function()
             local MiniMap = require('mini.map')
             local MiniAI = require('mini.ai')
