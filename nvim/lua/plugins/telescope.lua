@@ -103,11 +103,11 @@ return {
                         find_cmd = 'rg', -- find command (defaults to `fd`)
                     },
                     heading = {
-                        treesitter = true
+                        treesitter = true,
                     },
                     lazy = {
-                        theme = 'catppuccin'
-                    }
+                        theme = 'catppuccin',
+                    },
                 },
             })
 
@@ -248,8 +248,14 @@ return {
     'gbrlsnchs/telescope-lsp-handlers.nvim',
 
     -- Investigate HTTTP Status Codes
-    'barrett-ruth/telescope-http.nvim',
+    {
+        'barrett-ruth/http-codes.nvim',
+        config = true,
+        -- or 'nvim-telescope/telescope.nvim'
+        dependencies = 'ibhagwan/fzf-lua',
+        keys = { { '<leader>H', '<cmd>HTTPCodes<cr>' } },
+    },
 
     -- Integrate dap with Telescope
-    'nvim-telescope/telescope-dap.nvim'
+    'nvim-telescope/telescope-dap.nvim',
 }

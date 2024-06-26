@@ -63,7 +63,7 @@ return {
             autopairs.add_rules({
                 -- Rule for a pair with left-side ' ' and right side ' '
                 Rule(' ', ' ')
-                -- Pair will only occur if the conditional function returns true
+                    -- Pair will only occur if the conditional function returns true
                     :with_pair(
                         function(opts)
                             -- We are checking if we are inserting a space in (), [], or {}
@@ -77,7 +77,7 @@ return {
                     )
                     :with_move(conds.none())
                     :with_cr(conds.none())
-                -- We only want to delete the pair of spaces when the cursor is as such: ( | )
+                    -- We only want to delete the pair of spaces when the cursor is as such: ( | )
                     :with_del(
                         function(opts)
                             local col = vim.api.nvim_win_get_cursor(0)[2]
@@ -102,7 +102,7 @@ return {
                         end)
                         :with_del(conds.none())
                         :use_key(bracket[2])
-                    -- Removes the trailing whitespace that can occur without this
+                        -- Removes the trailing whitespace that can occur without this
                         :replace_map_cr(
                             function(_)
                                 return '<C-c>2xi<CR><C-c>O'
@@ -252,7 +252,7 @@ return {
             'nvim-neotest/nvim-nio',
             'MunifTanjim/nui.nvim',
         },
-        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = '*', -- Pin Neorg to the latest stable release
         opts = {
             load = {
@@ -284,22 +284,22 @@ return {
             local which_key = require('which-key')
             local setup = {
                 plugins = {
-                    marks = true,         -- shows a list of your marks on ' and `
-                    registers = true,     -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                    marks = true, -- shows a list of your marks on ' and `
+                    registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
                     spelling = {
-                        enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+                        enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
                         suggestions = 20, -- how many suggestions should be shown in the list?
                     },
                     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                     -- No actual key bindings are created
                     presets = {
-                        operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
-                        motions = false,      -- adds help for motions
+                        operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+                        motions = false, -- adds help for motions
                         text_objects = false, -- help for text objects triggered after entering an operator
-                        windows = true,       -- default bindings on <c-w>
-                        nav = true,           -- misc bindings to work with windows
-                        z = true,             -- bindings for folds, spelling and others prefixed with z
-                        g = true,             -- bindings for prefixed with g
+                        windows = true, -- default bindings on <c-w>
+                        nav = true, -- misc bindings to work with windows
+                        z = true, -- bindings for folds, spelling and others prefixed with z
+                        g = true, -- bindings for prefixed with g
                     },
                 },
                 -- add operators that will trigger motion and text object completion
@@ -312,25 +312,25 @@ return {
                 },
                 popup_mappings = {
                     scroll_down = '<c-d>', -- binding to scroll down inside the popup
-                    scroll_up = '<c-u>',   -- binding to scroll up inside the popup
+                    scroll_up = '<c-u>', -- binding to scroll up inside the popup
                 },
                 window = {
-                    border = 'rounded',       -- none, single, double, shadow
-                    position = 'bottom',      -- bottom, top
-                    margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
+                    border = 'rounded', -- none, single, double, shadow
+                    position = 'bottom', -- bottom, top
+                    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
                     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
                     winblend = 30,
                 },
                 layout = {
-                    height = { min = 4, max = 25 },                                           -- min and max height of the columns
-                    width = { min = 20, max = 50 },                                           -- min and max width of the columns
-                    spacing = 3,                                                              -- spacing between columns
-                    align = 'left',                                                           -- align columns left, center or right
+                    height = { min = 4, max = 25 }, -- min and max height of the columns
+                    width = { min = 20, max = 50 }, -- min and max width of the columns
+                    spacing = 3, -- spacing between columns
+                    align = 'left', -- align columns left, center or right
                 },
-                ignore_missing = true,                                                        -- enable this to hide mappings for which you didn't specify a label
+                ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
                 hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', 'call', 'lua', '^:', '^ ' }, -- hide mapping boilerplate
-                show_help = true,                                                             -- show help message on the command line when the popup is visible
-                triggers = 'auto',                                                            -- automatically setup triggers
+                show_help = true, -- show help message on the command line when the popup is visible
+                triggers = 'auto', -- automatically setup triggers
                 -- triggers = {"<leader>"} -- or specify a list manually
                 triggers_blacklist = {
                     -- list of mode / prefixes that should never be hooked by WhichKey
@@ -342,12 +342,12 @@ return {
             }
 
             local opts = {
-                mode = 'n',     -- NORMAL mode
+                mode = 'n', -- NORMAL mode
                 prefix = '<leader>',
-                buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-                silent = true,  -- use `silent` when creating keymaps
+                buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+                silent = true, -- use `silent` when creating keymaps
                 noremap = true, -- use `noremap` when creating keymaps
-                nowait = true,  -- use `nowait` when creating keymaps
+                nowait = true, -- use `nowait` when creating keymaps
             }
 
             local mappings = {
@@ -591,7 +591,7 @@ return {
     },
 
     -- Task Manager
-    { 'niuiic/task.nvim',     dependencies = { 'niuiic/core.nvim' } },
+    { 'niuiic/task.nvim', dependencies = { 'niuiic/core.nvim' } },
 
     -- Markers
     {
@@ -692,16 +692,16 @@ return {
                 saving_path = '/tmp/highstr/',
                 highlight_colors = {
                     -- color_id = {"bg_hex_code",<"fg_hex_code"/"smart">}
-                    color_0 = { mocha.crust, 'smart' },    -- Cosmic charcoal
-                    color_1 = { mocha.yellow, 'smart' },   -- Pastel yellow
+                    color_0 = { mocha.crust, 'smart' }, -- Cosmic charcoal
+                    color_1 = { mocha.yellow, 'smart' }, -- Pastel yellow
                     color_2 = { mocha.sapphire, 'smart' }, -- Aqua menthe
-                    color_3 = { mocha.mauve, 'smart' },    -- Proton purple
-                    color_4 = { mocha.red, 'smart' },      -- Orange red
-                    color_5 = { mocha.green, 'smart' },    -- Office green
-                    color_6 = { mocha.blue, 'smart' },     -- Just blue
-                    color_7 = { mocha.pink, 'smart' },     -- Blush pink
-                    color_8 = { mocha.overlay, 'smart' },  -- Cosmic latte
-                    color_9 = { mocha.peach, 'smart' },    -- Fallow brown
+                    color_3 = { mocha.mauve, 'smart' }, -- Proton purple
+                    color_4 = { mocha.red, 'smart' }, -- Orange red
+                    color_5 = { mocha.green, 'smart' }, -- Office green
+                    color_6 = { mocha.blue, 'smart' }, -- Just blue
+                    color_7 = { mocha.pink, 'smart' }, -- Blush pink
+                    color_8 = { mocha.overlay, 'smart' }, -- Cosmic latte
+                    color_9 = { mocha.peach, 'smart' }, -- Fallow brown
                 },
             })
         end,
@@ -714,7 +714,7 @@ return {
         opts = true, -- needed even when using default config
     },
 
-    -- Automatically genereate licenses
+    -- Automatically generate licenses
     {
         'https://git.sr.ht/~reggie/licenses.nvim',
         config = function()
@@ -826,7 +826,7 @@ return {
     {
         'chrisgrieser/nvim-recorder',
         dependencies = 'rcarriga/nvim-notify', -- optional
-        opts = {},                             -- required even with default settings
+        opts = {}, -- required even with default settings
     },
 
     -- Draw Venn diagrams
@@ -901,7 +901,7 @@ return {
     },
 
     -- Toggle text (true/false, on/off, etc.)
-    { 'nguyenvukhang/nvim-toggler',   config = true },
+    { 'nguyenvukhang/nvim-toggler', config = true },
 
     -- Preview folds
     { 'anuvyklack/fold-preview.nvim', dependencies = 'anuvyklack/keymap-amend.nvim', config = true },
