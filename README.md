@@ -16,7 +16,7 @@ My dotfiles for:
 
 - <details>
   <summary>tmux</summary>
-  
+
   - tpm
   - tmux-sensible
   - tmux-logging
@@ -35,7 +35,7 @@ My dotfiles for:
 - <details>
   <summary>neovim</summary>
 
-    - packer
+    - lazy
   - popup
   - plenary
   - vim-closetag
@@ -112,8 +112,8 @@ My dotfiles for:
   - vim-table-mode
   - hydra
   - which-key
-  - vim-godot 
-  - ccc 
-  - BQN 
+  - vim-godot
+  - ccc
+  - BQN
   - link-visitor
   </details>
