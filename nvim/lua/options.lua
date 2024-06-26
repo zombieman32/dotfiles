@@ -4,14 +4,6 @@ local o = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
-local mocha = require('catppuccin.palettes').get_palette('mocha')
-
-api.nvim_set_hl(0, 'NormalMode', { fg = mocha.blue, bold = true })
-api.nvim_set_hl(0, 'InsertMode', { fg = mocha.green, bold = true })
-api.nvim_set_hl(0, 'ReplaceMode', { fg = mocha.red, bold = true })
-api.nvim_set_hl(0, 'CommandMode', { fg = mocha.peach, bold = true })
-api.nvim_set_hl(0, 'VisualMode', { fg = mocha.mauve, bold = true })
-
 o.autochdir = true
 o.compatible = false -- no vi compatibility
 o.backup = false -- creates a backup file

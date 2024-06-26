@@ -68,3 +68,11 @@ require('plugins.lsp.handlers')
 require('autocmd')
 require('bqnlsp')
 require('bqnparser')
+
+local mocha = require('catppuccin.palettes').get_palette('mocha')
+
+vim.api.nvim_set_hl(0, 'NormalMode', { fg = mocha.blue, bold = true })
+vim.api.nvim_set_hl(0, 'InsertMode', { fg = mocha.green, bold = true })
+vim.api.nvim_set_hl(0, 'ReplaceMode', { fg = mocha.red, bold = true })
+vim.api.nvim_set_hl(0, 'CommandMode', { fg = mocha.peach, bold = true })
+vim.api.nvim_set_hl(0, 'VisualMode', { fg = mocha.mauve, bold = true })
