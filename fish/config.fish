@@ -86,6 +86,7 @@ fish_add_path /home/linuxbrew/.linuxbrew/sbin/
 fish_add_path /home/zombie/.spicetify
 fish_add_path /home/zombie/.luaver
 fish_add_path /usr/local/noweb/
+fish_add_path /snap/bin/
 fish_add_path /home/zombie/Applications/uxn
 fish_add_path /home/zombie/Applications/bw-linux-2024.1.0/
 fish_add_path /home/zombie/Applications/jq/
